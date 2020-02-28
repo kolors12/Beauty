@@ -14,8 +14,7 @@ class Dashboard extends CI_Controller {
 	}
 	public function dashboard_view()
 	{
-		// $sess_data = $this->session->all_userdata();
-		// if($sess_data['user_id'] == '' ){redirect('login/index');}
+		
 		$this->load->view('dashboard');
 	}
 }

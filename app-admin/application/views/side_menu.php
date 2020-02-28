@@ -1,13 +1,76 @@
-  <div class="scrollbar-sidebar">
+                <div class="scrollbar-sidebar">
                     <div class="app-sidebar__inner">
-                        <ul class="vertical-nav-menu"><li class="app-sidebar__heading">Menu</li>
+                        <ul class="vertical-nav-menu"><li class="app-sidebar__heading">Menu</li>  
+                            <li>
+                                <a href="<?php echo base_url('dashboard/dashboard_view');?>">
+                                <i class="metismenu-icon pe-7s-rocket"></i></i>Dashboard
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                <i class="metismenu-icon pe-7s-users"></i>
+                                        <b>Users</b>
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('users/users_view');?>" >
+                                            <i class="metismenu-icon">
+                                            </i>View Users
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('users/add_users');?>">
+                                            <i class="metismenu-icon">
+                                            </i>Add User
+                                        </a>
+                                    </li>
+                                   
+                                    
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <i class="metismenu-icon pe-7s-plane"></i>
+                                    <strong>Cities</strong> 
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('cities/cities_view');?>" >
+                                            <i class="metismenu-icon">
+                                            </i>View Cities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('cities/add_insert');?>">
+                                            <i class="metismenu-icon">
+                                            </i>Add City
+                                        </a>
+                                    </li>
+                                   
+                                    
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                            <li>
+                                <a href="<?php echo base_url('banner/banner_view');?>">
+                                    <i class="metismenu-icon pe-7s-paint-bucket"></i> <strong>Banners</strong>
+                                </a>
+                            </li>
+                            
+                            
                             <li class="mm-active">
                                 <a href="#">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Dashboards
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                                <ul><li>
+                                <ul>
+                                    <li>
                                         <a href="index.html" class="mm-active">
                                             <i class="metismenu-icon">
                                             </i>Analytics

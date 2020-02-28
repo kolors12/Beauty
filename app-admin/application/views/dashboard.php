@@ -73,9 +73,10 @@
                         </button>
                     </span>
                 </div>    
-            <?php $this->load->view('menu');?>
+            <?php $this->load->view('side_menu');?>
               
-            </div>    <div class="app-main__outer">
+            </div>    
+            <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
