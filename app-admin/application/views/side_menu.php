@@ -55,12 +55,38 @@
                                    
                                 </ul>
                             </li>
-                            <li>
-                            <li>
-                                <a href="<?php echo base_url('banner/banner_view');?>">
+
+                                <li>
+                                <a href="#">
+                                <i class="metismenu-icon pe-7s-paint-bucket"></i>
+                                    <strong>Banners</strong> 
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('banner/banner_view');?>" >
+                                            <i class="metismenu-icon">
+                                            </i>View Banners
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('banner/add_banner');?>">
+                                            <i class="metismenu-icon">
+                                            </i>Add Banner
+                                        </a>
+                                    </li>
+                                   
+                                    
+                                   
+                                </ul>
+                            </li>
+
+
+                            <!-- <li>
+                                <a href="<?php //echo base_url('banner/banner_view');?>">
                                     <i class="metismenu-icon pe-7s-paint-bucket"></i> <strong>Banners</strong>
                                 </a>
-                            </li>
+                            </li> -->
                             
                             
                             <li class="mm-active">
