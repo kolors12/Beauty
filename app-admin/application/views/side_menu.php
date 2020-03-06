@@ -56,7 +56,7 @@
                                 </ul>
                             </li>
 
-                                <li>
+                            <li>
                                 <a href="#">
                                 <i class="metismenu-icon pe-7s-paint-bucket"></i>
                                     <strong>Banners</strong> 
@@ -80,13 +80,86 @@
                                    
                                 </ul>
                             </li>
-
-
-                            <!-- <li>
-                                <a href="<?php //echo base_url('banner/banner_view');?>">
-                                    <i class="metismenu-icon pe-7s-paint-bucket"></i> <strong>Banners</strong>
+                            <li>
+                                <a href="#">
+                                <i class="metismenu-icon pe-7s-hammer"></i>
+                                    <strong>Brands</strong> 
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                            </li> -->
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('brands/brands_view');?>" >
+                                            <i class="metismenu-icon">
+                                            </i>View Brands
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('brands/add_brand');?>">
+                                            <i class="metismenu-icon">
+                                            </i>Add Brand
+                                        </a>
+                                    </li>
+                                   
+                                    
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <i class="metismenu-icon lnr-moon"></i>
+                                    <strong>Category</strong> 
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('category/category_view');?>" >
+                                            <i class="metismenu-icon">
+                                            </i>View Category
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('category/add_category');?>">
+                                            <i class="metismenu-icon">
+                                            </i>Add Category
+                                        </a>
+                                    </li>
+                                   
+                                    
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <i class="metismenu-icon pe-7s-diamond"></i>
+                                    <strong>Sub Category</strong> 
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('sub_category/sub_category_view');?>" >
+                                            <i class="metismenu-icon">
+                                            </i>View Sub Category
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('sub_category/add_sub_category');?>">
+                                            <i class="metismenu-icon">
+                                            </i>Add  Sub Category
+                                        </a>
+                                    </li>
+                                   
+                                    
+                                   
+                                </ul>
+                            </li>
+                            
+
+
+                            <li>
+                                <a href="<?php echo base_url('vendors/vendors_view');?>">
+                                    <i class="metismenu-icon lnr-database"></i> <strong>Vendors</strong>
+                                </a>
+                            </li>
                             
                             
                             <li class="mm-active">
