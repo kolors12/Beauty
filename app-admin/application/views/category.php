@@ -164,25 +164,18 @@
                                         <?php if($row['status'] == "0")
                                         { ?>
                                        
-                                        <span class="mb-2 mr-2 badge badge-pill badge-danger"> Inactive</span>
+                                        <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>category/category_status/<?php echo $row['id'].'/1'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus"><span class="mb-2 badge-danger"> Inactive</span></a>
                                         <?php  }
                                         else
                                         { ?>
-                                      
-                                        <span class="mb-2 mr-2 badge badge-success">Active</span>
+                                       <a  Onclick="return Active();" href="<?php echo base_url(); ?>category/category_status/<?php echo $row['id'].'/0'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus">
+                                        <span class="mb-2 badge-success">Active</span></a>
                                         <?php  }
                                         ?>
                                         </td>
                                       
                                         <td>
-                                        <?php if ($row['status'] == '1') { ?>
-                                        <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>category/category_status/<?php echo $row['id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus"><span  class="pe-7s-door-lock" title="Inactive"></span></a>
-                                        <?php } else { ?>
-                                        <a  Onclick="return Active();" href="<?php echo base_url(); ?>category/category_status/<?php echo $row['id'].'/1'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus"><span class="pe-7s-door-lock" title="Active"></span></a>
-                                        <?php } ?>
-                                        
-
-                                        <a href="<?php echo base_url(); ?>category/edit_category/<?php echo $row['id'];?>"><button type="button" class="btn btn-gradient-warning btn-sm " data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="pe-7s-trash pe-7s-link"></i></button></a>
+                                         <a href="<?php echo base_url(); ?>category/edit_category/<?php echo $row['id'];?>"><button type="button" class="btn btn-gradient-warning btn-sm " data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="pe-7s-trash pe-7s-link"></i></button></a>
                                         
                                         <a Onclick="return ConfirmDelete();" href="<?php echo base_url(); ?>category/delete_category/<?php echo $row['id'];?>"><button type="button" class="btn btn-info btn-sm removebtn" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="pe-7s-trash btn-icon-wrapper"></i></button></a>
                                         

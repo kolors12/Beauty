@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Language" content="en">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Users View</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Vendors View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 <meta name="description" content="This is an example dashboard created using build-in elements and components."><!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no"><link href="<?php echo base_url();?>assets/css/.-main.87c0748b313a1dda75f5.css" rel="stylesheet"></head><body>
@@ -98,7 +98,8 @@
                     <h5 ><p class="text-danger col-sm-12 text-success text-center" ><?php echo $this->session->flashdata('message3'); ?></p></h5>
                     <!-- <div class="d-flex flex-wrap justify-content-between">
                         <div class="col-12 col-md-3 p-0 mb-3">
-                            <a href="<?php echo base_url('users/add_users');?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-info">
+                            <a href="<?php echo base_url('users/add_users');?>">
+							<button type="button" class="btn-shadow dropdown-toggle btn btn-info">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa fa-plus fa-w-20"></i>
                                 </span>
@@ -107,85 +108,7 @@
                         </div>
 
                     </div> -->
-                    <!-- <div class="tabs-animation">
-                        
-                       
-                       
-                        <div class="card mb-3">
-                           
-                            <div class="card-body">
-                                <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
-                                        <thead>
-                                        <tr>
-                                        <th>S.No</th>
-                                        <th>User Name</th>
-                                        <th>User Email</th>
-                                        <th>User Mobile</th>
-                                        <th>User Address</th>
-                                        <th>Admin Type</th>
-                                        <th>User_image</th>
-                                        <th>Status</th>
-                                        <th>Actions</th> 
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php 
-                                        if(!empty($users)){	
-                                        $i = 0;
-                                        foreach ($users as $row) {
-                                        ++$i;
-										?>	
-                                        <tr>
-                                        <td><?php echo $i;?></td>
-                                        <td><?php echo $row['name']?></td>
-                                        <td><?php echo $row['email_id']?></td>
-                                        <td><?php echo $row['mobile']?></td>
-                                        <td><?php echo $row['address']?></td>
-                                        <td><button class="mb-2 mr-2 btn-pill btn btn-gradient-primary btn-sm"><?php echo $row['admin_type']?></button></td>
-                                        <td><img src="<?php echo base_url(); ?><?php echo $row['user_image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="50" width="50" alt="Avatar" class="w35 h35 rounded"></td>
-                                        <td scope="row">
-                                        <?php if($row['user_status'] == "0")
-                                        { ?>
-                                       
-                                        <span class="mb-2 mr-2 badge badge-pill badge-danger"> Inactive</span>
-                                        <?php  }
-                                        else
-                                        { ?>
-                                      
-                                        <span class="mb-2 mr-2 badge badge-success">Active</span>
-                                        <?php  }
-                                        ?>
-                                        </td>
-                                      
-                                        <td>
-                                        <?php if ($row['user_status'] == '1') { ?>
-                                        <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>users/user_status/<?php echo $row['admin_id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus"><span  class="pe-7s-door-lock" title="Inactive"></span></a>
-                                        <?php } else { ?>
-                                        <a  Onclick="return Active();" href="<?php echo base_url(); ?>users/user_status/<?php echo $row['admin_id'].'/1'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus"><span class="pe-7s-door-lock" title="Active"></span></a>
-                                        <?php } ?>
-                                        
-
-                                        <a href="<?php echo base_url(); ?>users/edit_user/<?php echo $row['admin_id'];?>"><button type="button" class="btn btn-gradient-warning btn-sm " data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="pe-7s-trash pe-7s-link"></i></button></a>
-                                        
-                                        <a Onclick="return ConfirmDelete();" href="<?php echo base_url(); ?>users/delete_user/<?php echo $row['admin_id'];?>"><button type="button" class="btn btn-info btn-sm removebtn" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="pe-7s-trash btn-icon-wrapper"></i></button></a>
-                                        
-                                        </td>
-                                        <?php  $i++; } }else{?>
-                                        <tr>
-                                        <td colspan="5" style="text-align:center;color:red;">No Sets Found</td>
-                                        </tr>
-                                        <?php } ?>
-                                    </tr>
-                                   
-                                   
-                                </tbody>
-                                   
-                                </table>
-                                </div>
-                        </div>
-                       
-                     
-                    </div> -->
+                  
                     <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"><li class="nav-item">
                             <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-0">
                                 <span>View Vendors</span>
@@ -200,144 +123,208 @@
                     <div class="tab-content">
                         <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                            
-                            <div class="main-card mb-3 card element-block-example">
-                                <div class="card-header">Header</div>
-                                <div class="card-body"><p>With supporting text below as a natural lead-in to additional content.</p>
-                                    <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
-                                <div class="d-block text-right card-footer">
-                                    <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-                                    <button class="btn btn-success btn-lg">Save</button>
-                                </div>
+                       <div class="tabs-animation">
+                        
+                       <div class="card mb-3">
+                           
+                            <div class="card-body">
+                                <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                                        <thead>
+                                        <tr>
+                                        <th>S.No</th>
+                                        <th>City Name</th>
+                                        <th>Vendor Name</th>
+                                        <th>Vendor Location</th>
+                                        <th>Mobile No</th>
+                                        <th>Email_id</th>
+										<th>Vendor Details</th>
+                                        <th>Status</th>
+                                        <th>Actions</th> 
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php 
+                                        if(!empty($vendors)){	
+                                        $i = 0;
+                                        foreach ($vendors as $row) {
+                                        ++$i;
+										?>	
+                                        <tr>
+                                        <td><?php echo $i;?></td>
+                                        <td><?php echo $row['city_name']?></td>
+                                        <td><?php echo $row['name']?></td>
+                                        <td><?php echo $row['location']?></td>
+										
+                                        <td><?php echo $row['mobile_no']?></td>
+										<td><?php echo $row['email_id']?></td>
+										<td><a href="<?php echo base_url('vendors/view_vendor_details');?>/<?php echo $row['vendor_id']?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-info">Vendor Details</button><a></td>
+                                        <!--td><button class="mb-2 mr-2 btn-pill btn btn-gradient-primary btn-sm"><?php // //$row['admin_type']?></button></td>
+                                        <td><img src="<?php// echo base_url(); ?><?php //echo $row['user_image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="50" width="50" alt="Avatar" class="w35 h35 rounded"></td-->
+                                        <td scope="row">
+                                        <?php if($row['status'] == "1")
+                                        { ?>
+                                        <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>vendors/vendor_status/<?php echo $row['vendor_id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus">
+                                        <span class="mb-2    badge-danger"> Inactive</span></a>
+                                        <?php  }
+                                        else
+                                        { ?>
+                                       <a  Onclick="return Active();" href="<?php echo base_url(); ?>vendors/vendor_status/<?php echo $row['vendor_id'].'/1'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus">
+                                        <span class="mb-2  badge-success">Active</span></a>
+                                        <?php  }
+                                        ?>
+                                        </td>
+                                      
+                                        <td>
+                                        <a href="<?php echo base_url(); ?>users/edit_user/<?php echo $row['admin_id'];?>"><button type="button" class="btn btn-gradient-warning btn-sm " data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="pe-7s-trash pe-7s-link"></i></button></a>
+                                        
+                                        <a Onclick="return ConfirmDelete();" href="<?php echo base_url(); ?>vendors/delete_vendor/<?php echo $row['vendor_id'];?>"><button type="button" class="btn btn-info btn-sm removebtn" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="pe-7s-trash btn-icon-wrapper"></i></button></a>
+                                        
+                                        </td>
+                                        <?php  $i++; } }else{?>
+                                        <tr>
+                                        <td colspan="5" style="text-align:center;color:red;">No Sets Found</td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tr>
+                                   
+                                   
+                                </tbody>
+                                   
+                               </table>
                             </div>
+                        </div>
+                       
+                     
+                    </div>
                         </div>
                         <div class="tab-pane tabs-animation fade" id="tab-content-1" role="tabpanel">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="main-card mb-3 card">
-                                       
-
-
-
-                                    <div class="row">
-                                <div class=" col-md-12">
-                                    <div class="main-card mb-3 card">
-                                        <div class="card-body">
-        
-                                            <div id="smartwizard">
-                                                <ul class="forms-wizard"><li>
-                                                        <a href="#step-1">
-                                                            <em>1</em><span>Account Information</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#step-2">
-                                                            <em>2</em><span>Payment Information</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#step-3">
-                                                            <em>3</em><span>Finish Wizard</span>
-                                                        </a>
-                                                    </li>
-                                                </ul><div class="form-wizard-content">
-                                                    <div id="step-1">
-                                                        <div class="form-row">
-                                                            <div class="col-md-6">
-                                                                <div class="position-relative form-group"><label for="exampleEmail55">Email</label><input name="email" id="exampleEmail55" placeholder="with a placeholder" type="email" class="form-control"></div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="position-relative form-group"><label for="examplePassword22">Password</label><input name="password" id="examplePassword22" placeholder="password placeholder" type="password" class="form-control"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="position-relative form-group"><label for="exampleAddress">Address</label><input name="address" id="exampleAddress" placeholder="1234 Main St" type="text" class="form-control"></div>
-                                                        <div class="position-relative form-group"><label for="exampleAddress2">Address 2</label><input name="address2" id="exampleAddress2" placeholder="Apartment, studio, or floor" type="text" class="form-control"></div>
-                                                        <div class="form-row">
-                                                            <div class="col-md-6">
-                                                                <div class="position-relative form-group"><label for="exampleCity">City</label><input name="city" id="exampleCity" type="text" class="form-control"></div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="position-relative form-group"><label for="exampleState">State</label><input name="state" id="exampleState" type="text" class="form-control"></div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="position-relative form-group"><label for="exampleZip">Zip</label><input name="zip" id="exampleZip" type="text" class="form-control"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="position-relative form-check"><input name="check" id="exampleCheck" type="checkbox" class="form-check-input"><label for="exampleCheck" class="form-check-label">Check me out</label></div>
-                                                    </div>
-                                                    <div id="step-2">
-                                                        <div id="accordion" class="accordion-wrapper mb-3">
-                                                            <div class="card">
-                                                                <div id="headingOne" class="card-header">
-                                                                    <button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
-                                                                        <span class="form-heading">Account Information<p>Enter your user informations below</p></span>
-                                                                    </button>
-                                                                </div>
-                                                                <div data-parent="#accordion" id="collapseOne" aria-labelledby="headingOne" class="collapse show">
-                                                                    <div class="card-body">
-                                                                        <div class="form-row">
-                                                                            <div class="col-md-6">
-                                                                                <div class="position-relative form-group">
-                                                                                    <label for="exampleEmail2">Email</label>
-                                                                                    <input name="email" id="exampleEmail2" placeholder="with a placeholder" type="email" class="form-control" required></div>
-                                                                            </div>
-                                                                            <div class="col-md-6">
-                                                                                <div class="position-relative form-group">
-                                                                                    <label for="examplePassword">Password</label>
-                                                                                    <input name="password" id="examplePassword" placeholder="password placeholder" type="password" class="form-control"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="position-relative form-group">
-                                                                            <label for="exampleAddress">Address</label><input name="address" id="exampleAddress" placeholder="1234 Main St" type="text" class="form-control"></div>
-                                                                        <div class="position-relative form-group"><label for="exampleAddress2">Address 2</label><input name="address2" id="exampleAddress2" placeholder="Apartment, studio, or floor" type="text" class="form-control"></div>
-                                                                        <div class="form-row">
-                                                                            <div class="col-md-6">
-                                                                                <div class="position-relative form-group"><label for="exampleCity">City</label><input name="city" id="exampleCity" type="text" class="form-control"></div>
-                                                                            </div>
-                                                                            <div class="col-md-4">
-                                                                                <div class="position-relative form-group"><label for="exampleState">State</label><input name="state" id="exampleState" type="text" class="form-control"></div>
-                                                                            </div>
-                                                                            <div class="col-md-2">
-                                                                                <div class="position-relative form-group"><label for="exampleZip">Zip</label><input name="zip" id="exampleZip" type="text" class="form-control"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="step-3">
-                                                        <div class="no-results">
-                                                            <div class="swal2-icon swal2-success swal2-animate-success-icon">
-                                                                <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
-                                                                <span class="swal2-success-line-tip"></span>
-                                                                <span class="swal2-success-line-long"></span>
-                                                                <div class="swal2-success-ring"></div>
-                                                                <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
-                                                                <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
-                                                            </div>
-                                                            <div class="results-subtitle mt-4">Finished!</div>
-                                                            <div class="results-title">You arrived at the last form wizard step!</div>
-                                                            <div class="mt-3 mb-3"></div>
-                                                            <div class="text-center">
-                                                                <button class="btn-shadow btn-wide btn btn-success btn-lg">Finish</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="divider"></div>
-                                            <div class="clearfix">
-                                                <button type="button" id="reset-btn" class="btn-shadow float-left btn btn-link">Reset</button>
-                                                <button type="button" id="next-btn" class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary">Next</button>
-                                                <button type="button" id="prev-btn" class="btn-shadow float-right btn-wide btn-pill mr-3 btn btn-outline-secondary">Previous</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
+                                 <div class="main-card mb-3 card">
+								<div class="card-body">
+                           
+								<form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('vendors/insert_vendor');?>" enctype="multipart/form-data">
+									
+								<div class="row">
+								
+								
+								<div class="col-md-6">
+									<div class="position-relative form-group">
+										<label for="exampleSelect" class="">City</label>
+										<select name="city_id" id="exampleSelect" class="form-control">
+										<option value="">Please City</option>
+										<option value="0">Admin</option>
+										<option value="1">Vender</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="vendor_name">Vendor Name</label>
+										<div>
+										<input type="text" class="form-control" id="vendor_name" name="vendor_name" placeholder=" Please Enter Vendor Name"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="location">location</label>
+										<div>
+										<input type="text" class="form-control" id="location" name="location" placeholder="Last location"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="address">Address</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="address" name="address" style="max-height: 200px; height: 35px;"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="latitude">latitude</label>
+										<div>
+										<input type="text" class="form-control" id="latitude" name="latitude" placeholder=" Please Enter latitude"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="longitude">Longitude</label>
+										<div>
+								   <input type="text" class="form-control" id="longitude" name="longitude" placeholder=" Please Enter longitude Number"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="mobile">phone</label>
+										<div>
+										<input type="text" class="form-control" id="phone" name="phone" placeholder=" Please Enter Phone Number"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="mobile">Mobile</label>
+										<div>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder=" Please Enter Mobile Number"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Email</label>
+										<div>
+										<input type="text" class="form-control" id="email" name="email" placeholder=" Please Enter Email id"></div>
+									</div>
+								</div>
+			
+								<div class="col-md-6">
+										<div class="position-relative form-group">
+										<label for="exampleSelect" class="">Categories</label>
+										<select name="categories" id="exampleSelect" class="form-control">
+										<option value="">Please Categories</option>
+										<option value="Admin">Admin</option>
+										<option value="Vender">Vender</option>
+										</select>
+									</div>
+								</div>
+								
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="address">About vendor</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="about_vendor" name="about_vendor" style="max-height: 200px; height: 35px;"></textarea>
+										</div>
+									</div>
+								</div>
+								
+								
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">photos</label>
+									<div>
+									<input type="file" class="form-control" id="photos" name="photos" placeholder="Please Your State">
+										</div>
+									</div>
+								</div>
+							
+								
+								   
+								<div class="col-md-6">
+									<div class="form-group">
+										<button type="submit" class="ladda-button mb-2 mr-2 btn btn-info" name="signup" value="Sign up">Submit</button>
+									</div>
+								</div>
+									
+									
+								</div>
+							</form>
+								 </div>
+								</div>
                                 </div>
-                                
-                            </div>
-                                    </div>
-                                </div>
+                               </div>
+                              </div>
+                             </div>
                             </div>
         
                         

@@ -14,79 +14,87 @@ class Vendors extends CI_Controller {
 	}
 	public function vendors_view()
 	{
-		//$data['users'] = $this->Users_model->get_users();
+		$data['vendors'] = $this->Vendors_model->get_vendors();
 		$this->load->view('vendors',$data);
 	}
 	public function add_users()
 	{
 		$this->load->view('add_users');
 	}
-
-
-	public function insert_user()
+	public function view_vendor_details($id)
 	{
-			$data['name'] = $this->input->post('lastname');
-			$data['email_id'] = $this->input->post('email');
-			$data['password'] = $this->input->post('password');
-			$data['mobile'] = $this->input->post('mobile');
+		$data['vendors_details'] = $this->Vendors_model->view_vendor_details($id);
+		$this->load->view('view_vendor_details',$data);
+	}
+
+
+	public function insert_vendor()
+	{
+			$data['city_id'] = $this->input->post('city_id');
+			$data['name'] = $this->input->post('vendor_name');
+			$data['location'] = $this->input->post('location');
 			$data['address'] = $this->input->post('address');
-			$data['dob'] = $this->input->post('dob');
-			// $data['user_image'] = $this->input->post('user_image');
-			$data['admin_type'] = $this->input->post('admintype');
+			$data['latitude'] = $this->input->post('latitude');
+			$data['longitude'] = $this->input->post('longitude');
+			$data['phone_no'] = $this->input->post('phone');
+			$data['mobile_no'] = $this->input->post('mobile');
+			$data['email_id'] = $this->input->post('email');
+			$data['categories'] = $this->input->post('categories');
+			$data['about_vendor'] = $this->input->post('about_vendor');
 
 			/* birth_certificate Code*/
-			$configicon['upload_path'] = 'assets/userimage/'; # check path is correct
+			$configicon['upload_path'] = 'assets/vendors/'; # check path is correct
 			$configicon['max_size'] = '10240000';
 			$configicon['allowed_types'] = 'gif|jpg|png'; # add video extenstion on here
 			$configicon['overwrite'] = FALSE;
 			$configicon['remove_spaces'] = TRUE;
-			$profileimg =$_FILES['user_image']['name'];
+			$profileimg =$_FILES['photos']['name'];
 			$configicon['file_name'] = $profileimg;
 			$this->load->library('upload', $configicon);
 			$this->upload->initialize($configicon);
-			$this->upload->do_upload('user_image'); 
+			$this->upload->do_upload('photos'); 
 
-			$data['user_image']  = 'assets/userimage/'.$profileimg;
-			$result = $this->Users_model->insert_user($data);
+			$data['photos']  = 'assets/vendors/'.$profileimg;
+			$result = $this->Vendors_model->insert_vendor($data);
 			if($result == 'true')
 			{
 				$this->load->helper('url');
-				$this->session->set_flashdata('message1','User Details Successfully Submited');
-				redirect('users/users_view');
+				$this->session->set_flashdata('message1','Vendor Details Successfully Submited');
+				redirect('vendors/vendors_view');
 			} else {
 					$this->load->helper('url');
-				redirect('users/insert_user');
+				redirect('vendors/vendors_view');
 			}
 		 
 	 }
 	 
 
-	 public function delete_user($id)
+	 public function delete_vendor($id)
 		{
-		$result = $this->Users_model->delete_user($id);
+		$result = $this->Vendors_model->delete_vendor($id);
 		   if($result == 'true')
 			{
 				$this->load->helper('url');
-				$this->session->set_flashdata('message3','User Successfully Deleted ');
-				redirect('users/users_view');
+				$this->session->set_flashdata('message3','Vendor Successfully Deleted ');
+				redirect('vendors/vendors_view');
 			} else {
 				$this->load->helper('url');
-				redirect('users/users_view');
+				redirect('vendors/vendors_view');
 			}
 		
 		}
-		public function user_status($id,$value)
+		public function vendor_status($id,$value)
 		{
-		
-			$result = $this->Users_model->user_status($id,$value);
+			$result = $this->Vendors_model->vendor_status($id,$value);
+			
 			if($result == 'true')
 			{
 				$this->load->helper('url');
-				$this->session->set_flashdata('message1','User Status Successfully Updated ');
-				redirect('users/users_view');
+				$this->session->set_flashdata('message1','Vendor Status Successfully Updated ');
+				redirect('vendors/vendors_view');
 			} else {
 				$this->load->helper('url');
-				redirect('users/users_view');
+				redirect('vendors/vendors_view');
 			}
 			
 		}

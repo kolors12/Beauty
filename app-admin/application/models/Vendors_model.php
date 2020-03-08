@@ -3,22 +3,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Vendors_model extends CI_Model {
 	
-	public  function insert_user($data)
+	public  function insert_vendor($data)
 	{
-		$this->db->insert('admin', $data);
+		$this->db->insert('vendors', $data);
 		return true;
 	}
-	public function get_users()
+	public function get_vendors()
 	{
-		$this->db->order_by('admin_id', 'Desc');
-		$query_result=$this->db->get('admin');
-		$result = $query_result->result_array();
+		$this->db->select('vendors.name,vendors.location,vendors.address,vendors.mobile_no,vendors.email_id,cities.city_name,vendors.vendor_id,vendors.status');
+		$this->db->from('vendors');
+		$this->db->join('cities','cities.city_id = vendors.city_id');
+		$query=$this->db->get();
+		$result=$query->result_array();
 		return $result;
 	}
-	public function delete_user($id)
+	
+	public function delete_vendor($id)
 	{
-		$this->db->where('admin_id',$id);
-		$query=$this->db->delete('admin');
+		$this->db->where('vendor_id',$id);
+		$query=$this->db->delete('vendors');
 		if($query)
 		{
 		return true;
@@ -28,11 +31,21 @@ class Vendors_model extends CI_Model {
 		}
 
 	}
-	function user_status($id,$value)
+	function vendor_status($id,$value)
 	{
-		
-		$this->db->where(array('admin_id' =>$id))->set(array('user_status' =>(int)$value))->update('admin');
+		$this->db->where(array('vendor_id' =>$id))->set(array('status' =>(int)$value))->update('vendors');
 		return true;
+	}
+	public function view_vendor_details($id)
+	{
+		$this->db->from('vendors');
+		$this->db->join('cities','cities.city_id = vendors.city_id');
+		$query=$this->db->get();
+		$this->db->where('vendors.vendor_id',$id);
+		$result=$query->result_array();
+		return $result;
+		
+		
 	}
 	public function edit_user($id)
 	{
