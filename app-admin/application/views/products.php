@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Language" content="en">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Vendors View</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 <meta name="description" content="This is an example dashboard created using build-in elements and components."><!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no"><link href="<?php echo base_url();?>assets/css/.-main.87c0748b313a1dda75f5.css" rel="stylesheet"></head><body>
@@ -84,7 +84,7 @@
                                 <div class="page-title-icon">
                                 <i class="lnr-database icon-gradient bg-night-fade"></i>
                                 </div>
-                                <div>Vendors
+                                <div>Products
                                     <div class="page-title-subheading">
                                     </div>
                                 </div>
@@ -111,12 +111,12 @@
                   
                     <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"><li class="nav-item">
                             <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-0">
-                                <span>View Vendors</span>
+                                <span>View Products List </span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-1">
-                                <span>Add Vendor</span>
+                                <span>Add Product</span>
                             </a>
                         </li>
                     </ul>
@@ -132,11 +132,11 @@
                                         <thead>
                                         <tr>
                                         <th>S.No</th>
-                                        <th>City Name</th>
-                                        <th>Vendor Name</th>
-                                        <th>Vendor Location</th>
-                                        <th>Mobile No</th>
-                                        <th>Email_id</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Sub Category </th>
+                                        <th>Product Type</th>
+                                        <th>HSN Code</th>
 										<th>Vendor Details</th>
                                         <th>Status</th>
                                         <th>Actions</th> 
@@ -144,31 +144,31 @@
                                         </thead>
                                         <tbody>
                                         <?php 
-                                        if(!empty($vendors)){	
+                                        if(!empty($products)){	
                                         $i = 0;
-                                        foreach ($vendors as $row) {
+                                        foreach ($products as $row) {
                                         ++$i;
 										?>	
                                         <tr>
                                         <td><?php echo $i;?></td>
-                                        <td><?php echo $row['city_name']?></td>
-                                        <td><?php echo $row['name']?></td>
-                                        <td><?php echo $row['location']?></td>
+                                        <td><?php echo $row['pro_name']?></td>
+                                        <td><?php echo $row['cat_id']?></td>
+                                        <td><?php echo $row['sub_cat_id']?></td>
 										
-                                        <td><?php echo $row['mobile_no']?></td>
-										<td><?php echo $row['email_id']?></td>
-										<td><a href="<?php echo base_url('vendors/view_vendor_details');?>/<?php echo $row['vendor_id']?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-info">Vendor Details</button><a></td>
+                                        <td><?php echo $row['pro_type']?></td>
+										<td><?php echo $row['hsn_code']?></td>
+										<td><a href="<?php echo base_url('products/view_product_details');?>/<?php echo $row['prod_id']?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-primary">Product Details</button><a></td>
                                         <!--td><button class="mb-2 mr-2 btn-pill btn btn-gradient-primary btn-sm"><?php // //$row['admin_type']?></button></td>
                                         <td><img src="<?php// echo base_url(); ?><?php //echo $row['user_image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="50" width="50" alt="Avatar" class="w35 h35 rounded"></td-->
                                         <td scope="row">
                                         <?php if($row['status'] == "1")
                                         { ?>
-                                        <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>vendors/vendor_status/<?php echo $row['vendor_id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus">
+                                        <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>products/product_status/<?php echo $row['prod_id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus">
                                         <span class="mb-2    badge-danger"> Inactive</span></a>
                                         <?php  }
                                         else
                                         { ?>
-                                       <a  Onclick="return Active();" href="<?php echo base_url(); ?>vendors/vendor_status/<?php echo $row['vendor_id'].'/1'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus">
+                                       <a  Onclick="return Active();" href="<?php echo base_url(); ?>products/product_status/<?php echo $row['prod_id'].'/1'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus">
                                         <span class="mb-2  badge-success">Active</span></a>
                                         <?php  }
                                         ?>
@@ -177,12 +177,12 @@
                                         <td>
                                         <a href="<?php echo base_url(); ?>users/edit_user/<?php echo $row['admin_id'];?>"><button type="button" class="btn btn-gradient-warning btn-sm " data-toggle="tooltip" data-placement="top" data-original-title="Edit"><i class="pe-7s-trash pe-7s-link"></i></button></a>
                                         
-                                        <a Onclick="return ConfirmDelete();" href="<?php echo base_url(); ?>vendors/delete_vendor/<?php echo $row['vendor_id'];?>"><button type="button" class="btn btn-info btn-sm removebtn" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="pe-7s-trash btn-icon-wrapper"></i></button></a>
+                                        <a Onclick="return ConfirmDelete();" href="<?php echo base_url(); ?>products/delete_product/<?php echo $row['prod_id'];?>"><button type="button" class="btn btn-info btn-sm removebtn" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><i class="pe-7s-trash btn-icon-wrapper"></i></button></a>
                                         
                                         </td>
                                         <?php  $i++; } }else{?>
                                         <tr>
-                                        <td colspan="5" style="text-align:center;color:red;">No Sets Found</td>
+                                        <td colspan="5" style="text-align:center;color:red;">No Products Found</td>
                                         </tr>
                                         <?php } ?>
                                     </tr>
@@ -204,112 +204,260 @@
                                  <div class="main-card mb-3 card">
 								<div class="card-body">
                            
-								<form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('vendors/insert_vendor');?>" enctype="multipart/form-data">
+								<form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('products/insert_product');?>" enctype="multipart/form-data">
 									
 								<div class="row">
 								
 								
+								
 								<div class="col-md-6">
 									<div class="position-relative form-group">
-										<label for="exampleSelect" class="">City</label>
-										<select name="city_id" id="exampleSelect" class="form-control">
-										<option value="">Please City</option>
-										<?php  foreach ($city as $row) {?>
-										<option value="<?php echo $row['city_id']?>"><?php echo $row['city_name']?></option>
+										<label for="exampleSelect" class="">Category</label>
+										<select name="cat_id" id="exampleSelect" class="form-control">
+										<option value="">Please Category</option>
+										<?php  foreach ($category as $row) {?>
+										<option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
 										<?php }?>
+										
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="position-relative form-group">
+										<label for="exampleSelect" class="">Sub Category</label>
+										<select name="sub_cat_id" id="exampleSelect" class="form-control">
+										<option value="">Please Sub Category</option>
+									
+										<option value="1">fdgdf</option>
+										<option value="2">fdgdf</option>
+										<option value="3">fdgdf</option>
+										
 										</select>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="vendor_name">Vendor Name</label>
+										<label for="vendor_name">Product Type</label>
 										<div>
-										<input type="text" class="form-control" id="vendor_name" name="vendor_name" placeholder=" Please Enter Vendor Name"></div>
+										<input type="number" class="form-control" id="pro_type" name="pro_type" placeholder=" Please Enter Product Type"></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="location">location</label>
+										<label for="location">Lang_id</label>
 										<div>
-										<input type="text" class="form-control" id="location" name="location" placeholder="Last location"></div>
+										<input type="text" class="form-control" id="lang_id" name="lang_id" placeholder="lang_id"></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="address">Address</label>
+										<label for="location">Product Name</label>
 										<div>
-										 <textarea rows="1" class="form-control autosize-input" id="address" name="address" style="max-height: 200px; height: 35px;"></textarea>
+										<input type="text" class="form-control" id="pro_name" name="pro_name" placeholder=" Please Enter Product Name"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="location">Slug</label>
+										<div>
+										<input type="text" class="form-control" id="slug" name="slug" placeholder=" Please Enter slug"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="location">HSN Code</label>
+										<div>
+										<input type="text" class="form-control" id="hsn_code" name="hsn_code" placeholder=" Please Enter Hsn Code"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="bullet_points">Bullet Points</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="bullet_points" name="bullet_points" style="max-height: 200px; height: 35px;"></textarea>
 										</div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="latitude">latitude</label>
+										<label for="pro_priority">Product Priority</label>
 										<div>
-										<input type="text" class="form-control" id="latitude" name="latitude" placeholder=" Please Enter latitude"></div>
+										<input type="number" class="form-control" id="pro_priority" name="pro_priority" placeholder=" Please Enter product Priority"></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-									<label for="longitude">Longitude</label>
+									<label for="pro_image">Product image</label>
 										<div>
-								   <input type="text" class="form-control" id="longitude" name="longitude" placeholder=" Please Enter longitude Number"></div>
+								   <input type="file" class="form-control" id="pro_image" name="pro_image" placeholder=""></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="mobile">phone</label>
+									<label for="pro_image_2">Product image 2 </label>
 										<div>
-										<input type="text" class="form-control" id="phone" name="phone" placeholder=" Please Enter Phone Number"></div>
+								   <input type="file" class="form-control" id="pro_image_2" name="pro_image_2" placeholder=""></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="mobile">Mobile</label>
+									<label for="pro_image_3">Product image 3</label>
 										<div>
-										<input type="text" class="form-control" id="mobile" name="mobile" placeholder=" Please Enter Mobile Number"></div>
+								   <input type="file" class="form-control" id="pro_image_3" name="pro_image_3" placeholder=""></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="email">Email</label>
+									<label for="pro_image_4">Product image 4</label>
 										<div>
-										<input type="text" class="form-control" id="email" name="email" placeholder=" Please Enter Email id"></div>
+								   <input type="file" class="form-control" id="pro_image_4" name="pro_image_4" placeholder=""></div>
 									</div>
 								</div>
-			
-								<div class="col-md-6">
-										<div class="position-relative form-group">
-										<label for="exampleSelect" class="">Categories</label>
-										<select name="categories" id="exampleSelect" class="form-control">
-										<option value="">Please Categories</option>
-											<?php  foreach ($category as $row) {?>
-										<option value="<?php echo $row ['id'];?>"><?php echo $row ['name'];?></option>
-											<?php }?>
-										</select>
-									</div>
-								</div>
-								
-								
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="address">About vendor</label>
+									<label for="pro_image_5">Product image 5</label>
 										<div>
-										 <textarea rows="1" class="form-control autosize-input" id="about_vendor" name="about_vendor" style="max-height: 200px; height: 35px;"></textarea>
+								   <input type="file" class="form-control" id="pro_image_5" name="pro_image_5" placeholder=""></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="pro_short_desc"> Product Short Description</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="pro_short_desc	" name="pro_short_desc	" style="max-height: 200px; height: 35px;"></textarea>
 										</div>
 									</div>
 								</div>
-								
-								
 								<div class="col-md-6">
 									<div class="form-group">
-									<label for="user_image">photos</label>
+										<label for="mobile">Product Price</label>
+										<div>
+										<input type="text" class="form-control" id="pro_price" name="pro_price" placeholder=" Please Enter Product Price"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="pro_desc"> Product Description</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="pro_desc	" name="pro_desc	" style="max-height: 200px; height: 35px;"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="mobile">Product qty</label>
+										<div>
+										<input type="number" class="form-control" id="qty" name="qty" placeholder=" Please Enter Product qty"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Product Brand</label>
+										<div>
+										<input type="text" class="form-control" id="pro_brand" name="pro_brand" placeholder=" Please Enter Product Brand"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Product Dim</label>
+										<div>
+										<input type="text" class="form-control" id="pro_dim" name="pro_dim" placeholder=" Please Enter Product Dim"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Product Model</label>
+										<div>
+										<input type="text" class="form-control" id="pro_model" name="pro_model" placeholder=" Please Enter Product model"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Product sku</label>
+										<div>
+										<input type="text" class="form-control" id="pro_sku" name="pro_sku" placeholder=" Please Enter Product sku"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Product Weight</label>
+										<div>
+										<input type="text" class="form-control" id="pro_weight" name="pro_weight" placeholder=" Please Enter Product weight"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Product series</label>
+										<div>
+										<input type="text" class="form-control" id="series" name="series" placeholder=" Please Enter Product series"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+								<div class="form-group">
+									<label for="address">Specification</label>
 									<div>
-									<input type="file" class="form-control" id="photos" name="photos" placeholder="Please Your State">
+									 <textarea rows="1" class="form-control autosize-input" id="specification" name="specification" style="max-height: 200px; height: 35px;"></textarea>
+									</div>
+								</div>
+							   </div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Product Prices</label>
+									<div>
+									<input type="text" class="form-control" id="pro_prices" name="pro_prices" placeholder="Please Your product_prices">
 										</div>
 									</div>
 								</div>
-							
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Product Spl Discount</label>
+									<div>
+									<input type="text" class="form-control" id="spl_discount" name="spl_discount" placeholder="Please Your spl_discount">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Product Extra fields</label>
+									<div>
+									<input type="text" class="form-control" id="extra_fields" name="extra_fields" placeholder="Please Your Extra_fields">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Top Deal Order</label>
+									<div>
+									<input type="text" class="form-control" id="top_deal_order" name="top_deal_order" placeholder="Please Your Top Deal order">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Product seo_title</label>
+									<div>
+									<input type="text" class="form-control" id="seo_title" name="seo_title" placeholder="Please Your seo_title">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Product seo_desc</label>
+									<div>
+									<input type="text" class="form-control" id="seo_desc" name="seo_desc" placeholder="Please Your seo_desc">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">Product seo_keywords</label>
+									<div>
+									<input type="text" class="form-control" id="seo_keywords" name="seo_keywords" placeholder="Please Your seo_keywords">
+										</div>
+									</div>
+								</div>
 								
 								   
 								<div class="col-md-6">

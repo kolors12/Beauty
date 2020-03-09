@@ -15,6 +15,8 @@ class Vendors extends CI_Controller {
 	public function vendors_view()
 	{
 		$data['vendors'] = $this->Vendors_model->get_vendors();
+		$data['city'] = $this->Vendors_model->get_city();
+		$data['category'] = $this->Vendors_model->get_category();
 		$this->load->view('vendors',$data);
 	}
 	public function add_users()
@@ -23,7 +25,9 @@ class Vendors extends CI_Controller {
 	}
 	public function view_vendor_details($id)
 	{
+		
 		$data['vendors_details'] = $this->Vendors_model->view_vendor_details($id);
+		
 		$this->load->view('view_vendor_details',$data);
 	}
 

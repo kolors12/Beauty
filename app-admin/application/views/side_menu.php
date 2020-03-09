@@ -160,6 +160,12 @@
                                     <i class="metismenu-icon lnr-database"></i> <strong>Vendors</strong>
                                 </a>
                             </li>
+							
+							 <li>
+                                <a href="<?php echo base_url('products/products_view');?>">
+                                    <i class="metismenu-icon lnr-database"></i> <strong>Products</strong>
+                                </a>
+                            </li>
                             
                             
                             <li class="mm-active">

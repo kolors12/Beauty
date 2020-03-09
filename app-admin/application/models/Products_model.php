@@ -1,18 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Vendors_model extends CI_Model {
+class Products_model extends CI_Model {
 	
-	public  function insert_vendor($data)
+	public  function insert_product($data)
 	{
-		$this->db->insert('vendors', $data);
+		$this->db->insert('products', $data);
 		return true;
 	}
-	public function get_vendors()
+	/* public function get_vendors()
 	{
 		$this->db->select('vendors.name,vendors.location,vendors.address,vendors.mobile_no,vendors.email_id,cities.city_name,vendors.vendor_id,vendors.status');
 		$this->db->from('vendors');
 		$this->db->join('cities','cities.city_id = vendors.city_id');
+		$query=$this->db->get();
+		$result=$query->result_array();
+		return $result;
+	} */
+	public function get_products()
+	{
+		
+		$this->db->from('products');
 		$query=$this->db->get();
 		$result=$query->result_array();
 		return $result;
@@ -32,10 +40,10 @@ class Vendors_model extends CI_Model {
 		return $result;
 	}
 	
-	public function delete_vendor($id)
+	public function delete_product($id)
 	{
-		$this->db->where('vendor_id',$id);
-		$query=$this->db->delete('vendors');
+		$this->db->where('prod_id',$id);
+		$query=$this->db->delete('products');
 		if($query)
 		{
 		return true;
@@ -45,17 +53,17 @@ class Vendors_model extends CI_Model {
 		}
 
 	}
-	function vendor_status($id,$value)
+	function product_status($id,$value)
 	{
-		$this->db->where(array('vendor_id' =>$id))->set(array('status' =>(int)$value))->update('vendors');
+		$this->db->where(array('prod_id' =>$id))->set(array('status' =>(int)$value))->update('products');
 		return true;
 	}
-	public function view_vendor_details($id)
+	public function view_product_details($id)
 	{
 		  $this->db->select('*');
-		  $this->db->from('vendors v');
-		  $this->db->join('cities c', 'c.city_id = v.city_id');
-		  $this->db->where(array('vendor_id' => $id));
+		  $this->db->from('products v');
+		  /* $this->db->join('cities c', 'c.city_id = v.city_id'); */
+		  $this->db->where(array('prod_id' => $id));
 		  $query = $this->db->get();
 		  $result = $query->result_array();
 		  return $result;
