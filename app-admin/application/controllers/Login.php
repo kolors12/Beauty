@@ -15,15 +15,15 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		$this->form_validation->set_rules("user_email","Email","required|valid_email|trim");
-        $this->form_validation->set_rules("user_password","Password","required|trim");
+		$this->form_validation->set_rules("email_id","Email","required|valid_email|trim");
+        $this->form_validation->set_rules("password","Password","required|trim");
         
 		if($this->form_validation->run()== true)
         {
 			
-		    $user_email= $this->input->post('user_email');
-			$user_password= $this->input->post('user_password');
-			$result = $this->Login_model->login($user_email,$user_password);
+		    $email_id= $this->input->post('email_id');
+			$password= $this->input->post('password');
+			$result = $this->Login_model->login($email_id,$password);
 			if($result =='true')
 			{
 				$sess_data = $this->session->all_userdata();
@@ -44,14 +44,15 @@ class Login extends CI_Controller {
 		
 		$user_session_items = array(
 			  
-		  'user_id' => $row->user_id,
-		  'user_name' => '',
-		  'user_email' => '',
-		  'user_phone' => '',
-		  'user_address' => '',
-		  'user_password' => '',
-		  'user_role' => '',
+		  'admin_id' => $row->admin_id,
+		  'name' => '',
+		  'email_id' => '',
+		  'mobile' => '',
+		  'address' => '',
+		  'location' => '',
+		  'admin_type' => '',
 		  'user_status' => '',
+		  'password' => '',
 	  
 	  );
 	  $sess_data = $this->session->all_userdata();

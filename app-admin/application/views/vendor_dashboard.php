@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Language" content="en">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Admin Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Vendor Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 <meta name="description" content="This is an example dashboard created using build-in elements and components."><!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no"><link href="<?php echo base_url();?>assets/css/.-main.87c0748b313a1dda75f5.css" rel="stylesheet"></head><body>
@@ -85,12 +85,10 @@
                                     <i class="pe-7s-car icon-gradient bg-mean-fruit">
                                     </i>
                                 </div>
-                             <?php $sess_data = $this->session->all_userdata();
-			                    if($sess_data['admin_type'] == 'Admin' ){ ?>
-                                <div>Admin Dashboard </div>
-                                <?php } else {?> 
-                                    <div>Vendor Dashboard </div> 
-                                <?php }?>
+                                <div>Vendor Dashboard
+                                    <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                                    </div>
+                                </div>
                             </div>
                             <div class="page-title-actions">
                                 <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
@@ -151,84 +149,9 @@
                                 <span>Variation 2</span>
                             </a>
                         </li>
-                    </ul><div class="tabs-animation">
-                        <div class="mb-3 card">
-                            <div class="card-header-tab card-header">
-                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                    <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
-                                    Portfolio Performance
-                                </div>
-                                <div class="btn-actions-pane-right text-capitalize">
-                                    <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">View All</button>
-                                </div>
-                            </div>
-                            <div class="no-gutters row">
-                                <div class="col-sm-6 col-md-4 col-xl-4">
-                                    <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                        <div class="icon-wrapper rounded-circle">
-                                            <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
-                                            <i class="lnr-laptop-phone text-dark opacity-8"></i></div>
-                                        <div class="widget-chart-content">
-                                            <div class="widget-subheading">Cash Deposits</div>
-                                            <div class="widget-numbers">1,7M</div>
-                                            <div class="widget-description opacity-8 text-focus">
-                                                <div class="d-inline text-danger pr-1">
-                                                    <i class="fa fa-angle-down"></i>
-                                                    <span class="pl-1">54.1%</span>
-                                                </div>
-                                                less earnings
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider m-0 d-md-none d-sm-block"></div>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-xl-4">
-                                    <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                        <div class="icon-wrapper rounded-circle">
-                                            <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
-                                            <i class="lnr-graduation-hat text-white"></i></div>
-                                        <div class="widget-chart-content">
-                                            <div class="widget-subheading">Invested Dividents</div>
-                                            <div class="widget-numbers"><span>9M</span></div>
-                                            <div class="widget-description opacity-8 text-focus">
-                                                Grow Rate:
-                                                <span class="text-info pl-1">
-                                                    <i class="fa fa-angle-down"></i>
-                                                    <span class="pl-1">14.1%</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider m-0 d-md-none d-sm-block"></div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-xl-4">
-                                    <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                        <div class="icon-wrapper rounded-circle">
-                                            <div class="icon-wrapper-bg opacity-9 bg-success"></div>
-                                            <i class="lnr-apartment text-white"></i></div>
-                                        <div class="widget-chart-content">
-                                            <div class="widget-subheading">Capital Gains</div>
-                                            <div class="widget-numbers text-success"><span>$563</span></div>
-                                            <div class="widget-description text-focus">
-                                                Increased by
-                                                <span class="text-warning pl-1">
-                                                    <i class="fa fa-angle-up"></i>
-                                                    <span class="pl-1">7.35%</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center d-block p-3 card-footer">
-                                <button class="btn-pill btn-shadow btn-wide fsize-1 btn btn-primary btn-lg">
-                                    <span class="mr-2 opacity-7">
-                                        <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
-                                    </span>
-                                    <span class="mr-1">View Complete Report</span>
-                                </button>
-                            </div>
-                        </div>
+                    </ul>
+                    <div class="tabs-animation">
+                        
                         <div class="row">
                             <div class="col-sm-12 col-lg-6">
                                 <div class="mb-3 card">

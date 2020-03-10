@@ -14,7 +14,9 @@ class Products extends CI_Controller {
 	}
 	public function products_view()
 	{
-		 $data['products'] = $this->Products_model->get_products();
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
+		$data['products'] = $this->Products_model->get_products();
 		/*$data['city'] = $this->Vendors_model->get_city();*/
 		$data['category'] = $this->Products_model->get_category(); 
 		$this->load->view('products',$data);

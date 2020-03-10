@@ -5,9 +5,9 @@ class Login_model extends CI_Model {
 	
 	
 	
-	  function login($user_email,$user_password)
+	  function login($email_id,$password)
 	  {
-		$query=$this->db->where(array('user_email'=>$user_email,'user_password'=>$user_password))->get('bu_users');
+		$query=$this->db->where(array('email_id'=>$email_id,'password'=>$password))->get('admin');
 		$result = $query->result_array();
 	
 		if(sizeof($result) == 1)
@@ -15,14 +15,15 @@ class Login_model extends CI_Model {
         {
             $row = $query->row();
             $data = array(
-			'user_id' => $row->user_id,
-			'user_name' => $row->user_name,
-			'user_email' => $row->user_email,
-			'user_phone' => $row->user_phone,
-			'user_address' => $row->user_address,
-			'user_password' => $row->user_password,
-			'user_role' => $row->user_role,
+			'admin_id' => $row->admin_id,
+			'name' => $row->name,
+			'email_id' => $row->email_id,
+			'mobile' => $row->mobile,
+			'address' => $row->address,
+			'location' => $row->location,
+			'admin_type' => $row->admin_type,
 			'user_status' => $row->user_status,
+			'password' => $row->password,
 			'validated' => true
 			);
             $this->session->set_userdata($data);

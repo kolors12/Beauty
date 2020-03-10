@@ -15,7 +15,7 @@
                                 <div class="modal-body">
                                     <div class="h5 modal-title text-center">
                                         <h4 class="mt-2">
-                                            <div>Welcome back,</div>
+                                            <div>Admin Login,</div>
                                             <span>Please sign in to your account below.</span>
                                         </h4>
                                         <h4><p class="text-danger col-sm-12 text-success" ><?php echo $this->session->flashdata('message'); ?></p></h4>
@@ -24,13 +24,13 @@
                                         <div class="form-row">
                                             <div class="col-md-12">
                                                 <div class="position-relative form-group">
-                                                    <input name="user_email" id="exampleEmail" placeholder="Enter Your Email here..." type="email" class="form-control" value="<?php echo set_value("user_email")?>">
-                                                    <span class="text-danger" style="float: right"><?php echo form_error("user_email") ?></span>
+                                                    <input name="email_id" id="exampleEmail" placeholder="Enter Your Email here..." type="email" class="form-control" value="<?php echo set_value("email_id")?>">
+                                                    <span class="text-danger" style="float: right"><?php echo form_error("email_id") ?></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="position-relative form-group"><input name="user_password" id="examplePassword" value="<?php echo set_value("user_password")?>" placeholder="Enter Your Password here..." type="password" class="form-control">
-                                                <span class="text-danger" style="float: right"><?php echo form_error("user_password") ?></span>
+                                                <div class="position-relative form-group"><input name="password" id="examplePassword" value="<?php echo set_value("password")?>" placeholder="Enter Your Password here..." type="password" class="form-control">
+                                                <span class="text-danger" style="float: right"><?php echo form_error("password") ?></span>
                                             </div>
                                             </div>
                                         </div>

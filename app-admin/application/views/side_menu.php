@@ -1,6 +1,9 @@
                 <div class="scrollbar-sidebar">
                     <div class="app-sidebar__inner">
                         <ul class="vertical-nav-menu"><li class="app-sidebar__heading">Menu</li>  
+                           <?php $sess_data = $this->session->all_userdata();
+			                 if($sess_data['admin_type'] == 'Admin' ){ ?>
+
                             <li>
                                 <a href="<?php echo base_url('dashboard/dashboard_view');?>">
                                 <i class="metismenu-icon pe-7s-rocket"></i></i>Dashboard
@@ -147,28 +150,47 @@
                                             </i>Add  Sub Category
                                         </a>
                                     </li>
-                                   
-                                    
+                                  
+                               
                                    
                                 </ul>
                             </li>
-                            
-
-
                             <li>
-                                <a href="<?php echo base_url('vendors/vendors_view');?>">
+                                <a href="<?php echo base_url('products/products_view');?>">
+                                <i class="metismenu-icon pe-7s-rocket"></i><strong>Productss</strong>
+                                </a>
+                            </li>
+                         <?php }?>
+
+                            <?php $sess_data = $this->session->all_userdata();
+			                 if($sess_data['admin_type'] == 'Vender' ){ ?>
+                            
+                            
+                            <li>
+                                <a href="<?php echo base_url('dashboard/dashboard_view');?>">
+                                <i class="metismenu-icon pe-7s-rocket"></i></i>Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url('products/products_view');?>">
+                                    <i class="metismenu-icon lnr-database"></i> <strong>Productss</strong>
+                                </a>
+                            </li>
+
+                            
+                            <?php }?>
+
+                            
+                            <!-- <li>
+                                <a href="<?php //echo base_url('vendors/vendors_view');?>">
                                     <i class="metismenu-icon lnr-database"></i> <strong>Vendors</strong>
                                 </a>
-                            </li>
+                            </li> -->
 							
-							 <li>
-                                <a href="<?php echo base_url('products/products_view');?>">
-                                    <i class="metismenu-icon lnr-database"></i> <strong>Products</strong>
-                                </a>
-                            </li>
+							
                             
                             
-                            <li class="mm-active">
+                            <!-- <li class="mm-active">
                                 <a href="#">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Dashboards
@@ -675,6 +697,6 @@
                                     <i class="metismenu-icon pe-7s-graph1">
                                     </i>Chart Sparklines
                                 </a>
-                            </li>
+                            </li> -->
                         </ul></div>
                 </div>
