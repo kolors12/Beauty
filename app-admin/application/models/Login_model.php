@@ -24,6 +24,7 @@ class Login_model extends CI_Model {
 			'admin_type' => $row->admin_type,
 			'user_status' => $row->user_status,
 			'password' => $row->password,
+			'user_image' => $row->user_image,
 			'validated' => true
 			);
             $this->session->set_userdata($data);

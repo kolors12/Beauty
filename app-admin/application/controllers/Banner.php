@@ -14,11 +14,15 @@ class Banner extends CI_Controller {
 	}
 	public function banner_view()
 	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['banner'] = $this->Banner_model->get_banner();
 		$this->load->view('banners',$data);
 	}
 	public function add_banner()
 	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$this->load->view('add_banner');
 	}
 
@@ -57,7 +61,7 @@ class Banner extends CI_Controller {
 	 }
 	 
 
-	 public function delete_banner($id)
+	   public function delete_banner($id)
 		{
 		$result = $this->Banner_model->delete_banner($id);
 		   if($result == 'true')
@@ -73,7 +77,6 @@ class Banner extends CI_Controller {
 		}
 		public function banner_status($id,$value)
 		{
-		
 			$result = $this->Banner_model->banner_status($id,$value);
 			if($result == 'true')
 			{
@@ -89,16 +92,17 @@ class Banner extends CI_Controller {
 		public function edit_banner($id)
 		{
 			$sess_data = $this->session->all_userdata();
-			if($sess_data['user_id'] == '' ){redirect('login/login');}
+		    if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['view_edit_banner'] = $this->Banner_model->edit_banner($id);
 			$this->load->view('edit_banner',$data);
 			
 		}
 	public function update_banner()
     {
-		$sess_data = $this->session->all_userdata();
-		if($sess_data['user_id'] == '' ){redirect('login/login');}
 		
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
+
 		$id = $this->input->post('id');
 		$data['lang_id'] = $this->input->post('cat_id');
 		$data['cat_name'] = $this->input->post('cat_name');

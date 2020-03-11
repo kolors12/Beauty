@@ -15,6 +15,20 @@ class Users_model extends CI_Model {
 		$result = $query_result->result_array();
 		return $result;
 	}
+	public function get_city()
+	{
+		$this->db->order_by('city_id', 'Desc');
+		$query_result=$this->db->get('cities');
+		$result = $query_result->result_array();
+		return $result;
+	}
+	public function get_category()
+	{
+		$this->db->order_by('id', 'Desc');
+		$query_result=$this->db->get('category');
+		$result = $query_result->result_array();
+		return $result;
+	}
 	public function delete_user($id)
 	{
 		$this->db->where('admin_id',$id);

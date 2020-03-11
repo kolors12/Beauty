@@ -14,11 +14,15 @@ class Sub_Category extends CI_Controller {
 	}
 	public function sub_category_view()
 	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['sub_category'] = $this->Sub_Category_model->get_sub_category();
 		$this->load->view('sub_category',$data);
 	}
 	public function add_sub_category()
-	{
+	{	
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['category_drop'] = $this->Sub_Category_model->get_drop_type();
 	
 		$this->load->view('add_sub_category',$data);
@@ -26,7 +30,9 @@ class Sub_Category extends CI_Controller {
 
 
 	public function insert_sub_category()
-	{
+	{		
+			$sess_data = $this->session->all_userdata();
+			if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['lang_id'] = $this->input->post('lang_id');
 			$data['cat_id'] = $this->input->post('cat_id');
 			$data['sub_cat_name'] = $this->input->post('sub_cat_name');
@@ -71,8 +77,11 @@ class Sub_Category extends CI_Controller {
 	 
 
 	 public function delete_sub_category($id)
-		{
-		$result = $this->Sub_Category_model->delete_sub_category($id);
+	 {   
+			
+			$sess_data = $this->session->all_userdata();
+			if($sess_data['admin_id'] == '' ){redirect('login/index');}
+		    $result = $this->Sub_Category_model->delete_sub_category($id);
 		   if($result == 'true')
 			{
 				$this->load->helper('url');
@@ -86,7 +95,8 @@ class Sub_Category extends CI_Controller {
 		}
 		public function sub_category_status($id,$value)
 		{
-		
+			$sess_data = $this->session->all_userdata();
+			if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$result = $this->Sub_Category_model->sub_category_status($id,$value);
 			if($result == 'true')
 			{
@@ -101,16 +111,16 @@ class Sub_Category extends CI_Controller {
 		}
 		public function edit_brand($id)
 		{
-			// $sess_data = $this->session->all_userdata();
-			// if($sess_data['user_id'] == '' ){redirect('login/login');}
+			$sess_data = $this->session->all_userdata();
+		    if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['view_edit_brand'] = $this->Category_model->edit_brand($id);
 			$this->load->view('edit_brand',$data);
 			
 		}
 	public function update_brand()
     {
-		// $sess_data = $this->session->all_userdata();
-		// if($sess_data['user_id'] == '' ){redirect('login/login');}
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		
 		$id = $this->input->post('id');
 		$data['name'] = $this->input->post('name');

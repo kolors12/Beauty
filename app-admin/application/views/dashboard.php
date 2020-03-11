@@ -92,66 +92,11 @@
                                     <div>Vendor Dashboard </div> 
                                 <?php }?>
                             </div>
-                            <div class="page-title-actions">
-                                <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
-                                    <i class="fa fa-star"></i>
-                                </button>
-                                <div class="d-inline-block dropdown">
-                                    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                                            <i class="fa fa-business-time fa-w-20"></i>
-                                        </span>
-                                        Buttons
-                                    </button>
-                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                        <ul class="nav flex-column"><li class="nav-item">
-                                                <a class="nav-link" href="architectui-html-pro.html">
-                                                    <i class="nav-link-icon lnr-inbox"></i>
-                                                    <span>
-                                                        Inbox
-                                                    </span>
-                                                    <div class="ml-auto badge badge-pill badge-secondary">86</div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="architectui-html-pro.html">
-                                                    <i class="nav-link-icon lnr-book"></i>
-                                                    <span>
-                                                        Book
-                                                    </span>
-                                                    <div class="ml-auto badge badge-pill badge-danger">5</div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="architectui-html-pro.html">
-                                                    <i class="nav-link-icon lnr-picture"></i>
-                                                    <span>
-                                                        Picture
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a disabled class="nav-link disabled" href="architectui-html-pro.html">
-                                                    <i class="nav-link-icon lnr-file-empty"></i>
-                                                    <span>
-                                                        File Disabled
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul></div>
-                                </div>
-                            </div>    </div>
-                    </div>            <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav"><li class="nav-item">
-                            <a role="tab" class="nav-link active" href="index.html">
-                                <span>Variation 1</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a role="tab" class="nav-link" href="analytics-variation.html">
-                                <span>Variation 2</span>
-                            </a>
-                        </li>
-                    </ul><div class="tabs-animation">
+                               
+                        </div>
+                    </div>            
+                   <?php  if($sess_data['admin_type'] == 'Admin' ){ ?>
+                    <div class="tabs-animation">
                         <div class="mb-3 card">
                             <div class="card-header-tab card-header">
                                 <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
@@ -745,800 +690,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-3">
-                            <div class="card-header-tab card-header">
-                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>Easy Dynamic Tables</div>
-                                <div class="btn-actions-pane-right actions-icon-btn">
-                                    <div class="btn-group dropdown">
-                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="pe-7s-menu btn-icon-wrapper"></i></button>
-                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu"><h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                            <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
-                                            <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-file-empty"> </i><span>Settings</span></button>
-                                            <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
-                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                            <div class="p-3 text-right">
-                                                <button class="mr-2 btn-shadow btn-sm btn btn-link">View Details</button>
-                                                <button class="mr-2 btn-shadow btn-sm btn btn-primary">Action</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered"><thead><tr><th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr></thead><tbody><tr><td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr><tr><td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                    </tr><tr><td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                        <td>$86,000</td>
-                                    </tr><tr><td>Cedric Kelly</td>
-                                        <td>Senior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>2012/03/29</td>
-                                        <td>$433,060</td>
-                                    </tr><tr><td>Airi Satou</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>33</td>
-                                        <td>2008/11/28</td>
-                                        <td>$162,700</td>
-                                    </tr><tr><td>Brielle Williamson</td>
-                                        <td>Integration Specialist</td>
-                                        <td>New York</td>
-                                        <td>61</td>
-                                        <td>2012/12/02</td>
-                                        <td>$372,000</td>
-                                    </tr><tr><td>Herrod Chandler</td>
-                                        <td>Sales Assistant</td>
-                                        <td>San Francisco</td>
-                                        <td>59</td>
-                                        <td>2012/08/06</td>
-                                        <td>$137,500</td>
-                                    </tr><tr><td>Rhona Davidson</td>
-                                        <td>Integration Specialist</td>
-                                        <td>Tokyo</td>
-                                        <td>55</td>
-                                        <td>2010/10/14</td>
-                                        <td>$327,900</td>
-                                    </tr><tr><td>Colleen Hurst</td>
-                                        <td>Javascript Developer</td>
-                                        <td>San Francisco</td>
-                                        <td>39</td>
-                                        <td>2009/09/15</td>
-                                        <td>$205,500</td>
-                                    </tr><tr><td>Sonya Frost</td>
-                                        <td>Software Engineer</td>
-                                        <td>Edinburgh</td>
-                                        <td>23</td>
-                                        <td>2008/12/13</td>
-                                        <td>$103,600</td>
-                                    </tr><tr><td>Jena Gaines</td>
-                                        <td>Office Manager</td>
-                                        <td>London</td>
-                                        <td>30</td>
-                                        <td>2008/12/19</td>
-                                        <td>$90,560</td>
-                                    </tr><tr><td>Quinn Flynn</td>
-                                        <td>Support Lead</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>2013/03/03</td>
-                                        <td>$342,000</td>
-                                    </tr><tr><td>Charde Marshall</td>
-                                        <td>Regional Director</td>
-                                        <td>San Francisco</td>
-                                        <td>36</td>
-                                        <td>2008/10/16</td>
-                                        <td>$470,600</td>
-                                    </tr><tr><td>Haley Kennedy</td>
-                                        <td>Senior Marketing Designer</td>
-                                        <td>London</td>
-                                        <td>43</td>
-                                        <td>2012/12/18</td>
-                                        <td>$313,500</td>
-                                    </tr><tr><td>Tatyana Fitzpatrick</td>
-                                        <td>Regional Director</td>
-                                        <td>London</td>
-                                        <td>19</td>
-                                        <td>2010/03/17</td>
-                                        <td>$385,750</td>
-                                    </tr><tr><td>Michael Silva</td>
-                                        <td>Marketing Designer</td>
-                                        <td>London</td>
-                                        <td>66</td>
-                                        <td>2012/11/27</td>
-                                        <td>$198,500</td>
-                                    </tr><tr><td>Paul Byrd</td>
-                                        <td>Chief Financial Officer (CFO)</td>
-                                        <td>New York</td>
-                                        <td>64</td>
-                                        <td>2010/06/09</td>
-                                        <td>$725,000</td>
-                                    </tr><tr><td>Gloria Little</td>
-                                        <td>Systems Administrator</td>
-                                        <td>New York</td>
-                                        <td>59</td>
-                                        <td>2009/04/10</td>
-                                        <td>$237,500</td>
-                                    </tr><tr><td>Bradley Greer</td>
-                                        <td>Software Engineer</td>
-                                        <td>London</td>
-                                        <td>41</td>
-                                        <td>2012/10/13</td>
-                                        <td>$132,000</td>
-                                    </tr><tr><td>Dai Rios</td>
-                                        <td>Personnel Lead</td>
-                                        <td>Edinburgh</td>
-                                        <td>35</td>
-                                        <td>2012/09/26</td>
-                                        <td>$217,500</td>
-                                    </tr><tr><td>Jenette Caldwell</td>
-                                        <td>Development Lead</td>
-                                        <td>New York</td>
-                                        <td>30</td>
-                                        <td>2011/09/03</td>
-                                        <td>$345,000</td>
-                                    </tr><tr><td>Yuri Berry</td>
-                                        <td>Chief Marketing Officer (CMO)</td>
-                                        <td>New York</td>
-                                        <td>40</td>
-                                        <td>2009/06/25</td>
-                                        <td>$675,000</td>
-                                    </tr><tr><td>Caesar Vance</td>
-                                        <td>Pre-Sales Support</td>
-                                        <td>New York</td>
-                                        <td>21</td>
-                                        <td>2011/12/12</td>
-                                        <td>$106,450</td>
-                                    </tr><tr><td>Doris Wilder</td>
-                                        <td>Sales Assistant</td>
-                                        <td>Sidney</td>
-                                        <td>23</td>
-                                        <td>2010/09/20</td>
-                                        <td>$85,600</td>
-                                    </tr><tr><td>Angelica Ramos</td>
-                                        <td>Chief Executive Officer (CEO)</td>
-                                        <td>London</td>
-                                        <td>47</td>
-                                        <td>2009/10/09</td>
-                                        <td>$1,200,000</td>
-                                    </tr><tr><td>Gavin Joyce</td>
-                                        <td>Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>42</td>
-                                        <td>2010/12/22</td>
-                                        <td>$92,575</td>
-                                    </tr><tr><td>Jennifer Chang</td>
-                                        <td>Regional Director</td>
-                                        <td>Singapore</td>
-                                        <td>28</td>
-                                        <td>2010/11/14</td>
-                                        <td>$357,650</td>
-                                    </tr><tr><td>Brenden Wagner</td>
-                                        <td>Software Engineer</td>
-                                        <td>San Francisco</td>
-                                        <td>28</td>
-                                        <td>2011/06/07</td>
-                                        <td>$206,850</td>
-                                    </tr><tr><td>Fiona Green</td>
-                                        <td>Chief Operating Officer (COO)</td>
-                                        <td>San Francisco</td>
-                                        <td>48</td>
-                                        <td>2010/03/11</td>
-                                        <td>$850,000</td>
-                                    </tr><tr><td>Shou Itou</td>
-                                        <td>Regional Marketing</td>
-                                        <td>Tokyo</td>
-                                        <td>20</td>
-                                        <td>2011/08/14</td>
-                                        <td>$163,000</td>
-                                    </tr><tr><td>Michelle House</td>
-                                        <td>Integration Specialist</td>
-                                        <td>Sidney</td>
-                                        <td>37</td>
-                                        <td>2011/06/02</td>
-                                        <td>$95,400</td>
-                                    </tr><tr><td>Suki Burks</td>
-                                        <td>Developer</td>
-                                        <td>London</td>
-                                        <td>53</td>
-                                        <td>2009/10/22</td>
-                                        <td>$114,500</td>
-                                    </tr><tr><td>Prescott Bartlett</td>
-                                        <td>Technical Author</td>
-                                        <td>London</td>
-                                        <td>27</td>
-                                        <td>2011/05/07</td>
-                                        <td>$145,000</td>
-                                    </tr><tr><td>Gavin Cortez</td>
-                                        <td>Team Leader</td>
-                                        <td>San Francisco</td>
-                                        <td>22</td>
-                                        <td>2008/10/26</td>
-                                        <td>$235,500</td>
-                                    </tr><tr><td>Martena Mccray</td>
-                                        <td>Post-Sales support</td>
-                                        <td>Edinburgh</td>
-                                        <td>46</td>
-                                        <td>2011/03/09</td>
-                                        <td>$324,050</td>
-                                    </tr><tr><td>Unity Butler</td>
-                                        <td>Marketing Designer</td>
-                                        <td>San Francisco</td>
-                                        <td>47</td>
-                                        <td>2009/12/09</td>
-                                        <td>$85,675</td>
-                                    </tr><tr><td>Howard Hatfield</td>
-                                        <td>Office Manager</td>
-                                        <td>San Francisco</td>
-                                        <td>51</td>
-                                        <td>2008/12/16</td>
-                                        <td>$164,500</td>
-                                    </tr><tr><td>Hope Fuentes</td>
-                                        <td>Secretary</td>
-                                        <td>San Francisco</td>
-                                        <td>41</td>
-                                        <td>2010/02/12</td>
-                                        <td>$109,850</td>
-                                    </tr><tr><td>Vivian Harrell</td>
-                                        <td>Financial Controller</td>
-                                        <td>San Francisco</td>
-                                        <td>62</td>
-                                        <td>2009/02/14</td>
-                                        <td>$452,500</td>
-                                    </tr><tr><td>Timothy Mooney</td>
-                                        <td>Office Manager</td>
-                                        <td>London</td>
-                                        <td>37</td>
-                                        <td>2008/12/11</td>
-                                        <td>$136,200</td>
-                                    </tr><tr><td>Jackson Bradshaw</td>
-                                        <td>Director</td>
-                                        <td>New York</td>
-                                        <td>65</td>
-                                        <td>2008/09/26</td>
-                                        <td>$645,750</td>
-                                    </tr><tr><td>Olivia Liang</td>
-                                        <td>Support Engineer</td>
-                                        <td>Singapore</td>
-                                        <td>64</td>
-                                        <td>2011/02/03</td>
-                                        <td>$234,500</td>
-                                    </tr><tr><td>Bruno Nash</td>
-                                        <td>Software Engineer</td>
-                                        <td>London</td>
-                                        <td>38</td>
-                                        <td>2011/05/03</td>
-                                        <td>$163,500</td>
-                                    </tr><tr><td>Sakura Yamamoto</td>
-                                        <td>Support Engineer</td>
-                                        <td>Tokyo</td>
-                                        <td>37</td>
-                                        <td>2009/08/19</td>
-                                        <td>$139,575</td>
-                                    </tr><tr><td>Thor Walton</td>
-                                        <td>Developer</td>
-                                        <td>New York</td>
-                                        <td>61</td>
-                                        <td>2013/08/11</td>
-                                        <td>$98,540</td>
-                                    </tr><tr><td>Finn Camacho</td>
-                                        <td>Support Engineer</td>
-                                        <td>San Francisco</td>
-                                        <td>47</td>
-                                        <td>2009/07/07</td>
-                                        <td>$87,500</td>
-                                    </tr><tr><td>Serge Baldwin</td>
-                                        <td>Data Coordinator</td>
-                                        <td>Singapore</td>
-                                        <td>64</td>
-                                        <td>2012/04/09</td>
-                                        <td>$138,575</td>
-                                    </tr><tr><td>Zenaida Frank</td>
-                                        <td>Software Engineer</td>
-                                        <td>New York</td>
-                                        <td>63</td>
-                                        <td>2010/01/04</td>
-                                        <td>$125,250</td>
-                                    </tr><tr><td>Zorita Serrano</td>
-                                        <td>Software Engineer</td>
-                                        <td>San Francisco</td>
-                                        <td>56</td>
-                                        <td>2012/06/01</td>
-                                        <td>$115,000</td>
-                                    </tr><tr><td>Jennifer Acosta</td>
-                                        <td>Junior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>43</td>
-                                        <td>2013/02/01</td>
-                                        <td>$75,650</td>
-                                    </tr><tr><td>Cara Stevens</td>
-                                        <td>Sales Assistant</td>
-                                        <td>New York</td>
-                                        <td>46</td>
-                                        <td>2011/12/06</td>
-                                        <td>$145,600</td>
-                                    </tr><tr><td>Hermione Butler</td>
-                                        <td>Regional Director</td>
-                                        <td>London</td>
-                                        <td>47</td>
-                                        <td>2011/03/21</td>
-                                        <td>$356,250</td>
-                                    </tr><tr><td>Lael Greer</td>
-                                        <td>Systems Administrator</td>
-                                        <td>London</td>
-                                        <td>21</td>
-                                        <td>2009/02/27</td>
-                                        <td>$103,500</td>
-                                    </tr><tr><td>Jonas Alexander</td>
-                                        <td>Developer</td>
-                                        <td>San Francisco</td>
-                                        <td>30</td>
-                                        <td>2010/07/14</td>
-                                        <td>$86,500</td>
-                                    </tr><tr><td>Shad Decker</td>
-                                        <td>Regional Director</td>
-                                        <td>Edinburgh</td>
-                                        <td>51</td>
-                                        <td>2008/11/13</td>
-                                        <td>$183,000</td>
-                                    </tr><tr><td>Michael Bruce</td>
-                                        <td>Javascript Developer</td>
-                                        <td>Singapore</td>
-                                        <td>29</td>
-                                        <td>2011/06/27</td>
-                                        <td>$183,000</td>
-                                    </tr><tr><td>Donna Snider</td>
-                                        <td>Customer Support</td>
-                                        <td>New York</td>
-                                        <td>27</td>
-                                        <td>2011/01/25</td>
-                                        <td>$112,000</td>
-                                    </tr></tbody><tfoot><tr><th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr></tfoot></table></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-6">
-                                <div class="card-hover-shadow-2x mb-3 card">
-                                    <div class="card-header-tab card-header">
-                                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-database icon-gradient bg-malibu-beach"> </i>Tasks List</div>
-                                        <div class="btn-actions-pane-right text-capitalize actions-icon-btn">
-                                            <div class="btn-group dropdown">
-                                                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="pe-7s-menu btn-icon-wrapper"></i></button>
-                                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu"><h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                                    <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
-                                                    <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-file-empty"> </i><span>Settings</span></button>
-                                                    <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
-                                                    <div tabindex="-1" class="dropdown-divider"></div>
-                                                    <div class="p-3 text-right">
-                                                        <button class="mr-2 btn-shadow btn-sm btn btn-link">View Details</button>
-                                                        <button class="mr-2 btn-shadow btn-sm btn btn-primary">Action</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="scroll-area-lg">
-                                        <div class="scrollbar-container">
-                                            <div class="p-2">
-                                                <ul class="todo-list-wrapper list-group list-group-flush"><li class="list-group-item">
-                                                        <div class="todo-indicator bg-warning"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox12" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox12"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-heading">Wash the car
-                                                                        <div class="badge badge-danger ml-2">Rejected</div>
-                                                                    </div>
-                                                                    <div class="widget-subheading"><i>Written by Bob</i></div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                    <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                        <i class="fa fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-focus"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox1" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox1"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-heading">Task with dropdown menu</div>
-                                                                    <div class="widget-subheading">
-                                                                        <div>By Johnny
-                                                                            <div class="badge badge-pill badge-info ml-2">NEW</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <div class="d-inline-block dropdown">
-                                                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="border-0 btn-transition btn btn-link">
-                                                                            <i class="fa fa-ellipsis-h"></i>
-                                                                        </button>
-                                                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right"><h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                                                            <button type="button" disabled tabindex="-1" class="disabled dropdown-item">Action</button>
-                                                                            <button type="button" tabindex="0" class="dropdown-item">Another Action</button>
-                                                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                                                            <button type="button" tabindex="0" class="dropdown-item">Another Action</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-primary"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox4" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox4"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading">Badge on the right task</div>
-                                                                    <div class="widget-subheading">This task has show on hover actions!</div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="widget-content-right ml-3">
-                                                                    <div class="badge badge-pill badge-success">Latest Task</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-info"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox2" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox2"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left mr-3">
-                                                                    <div class="widget-content-left">
-                                                                        <img width="42" class="rounded" src="images/avatars-1.jpg" alt=""></div>
-                                                                </div>
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-heading">Go grocery shopping</div>
-                                                                    <div class="widget-subheading">A short description for this todo item</div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                    <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                        <i class="fa fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-success"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox3" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox3"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading">Development Task</div>
-                                                                    <div class="widget-subheading">Finish React ToDo List App</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <div class="badge badge-warning mr-2">69</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                    <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                        <i class="fa fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-warning"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox12" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox12"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-heading">Wash the car
-                                                                        <div class="badge badge-danger ml-2">Rejected</div>
-                                                                    </div>
-                                                                    <div class="widget-subheading"><i>Written by Bob</i></div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                    <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                        <i class="fa fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-focus"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox1" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox1"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-heading">Task with dropdown menu</div>
-                                                                    <div class="widget-subheading">
-                                                                        <div>By Johnny
-                                                                            <div class="badge badge-pill badge-info ml-2">NEW</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <div class="d-inline-block dropdown">
-                                                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="border-0 btn-transition btn btn-link">
-                                                                            <i class="fa fa-ellipsis-h"></i>
-                                                                        </button>
-                                                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right"><h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                                                            <button type="button" disabled tabindex="-1" class="disabled dropdown-item">Action</button>
-                                                                            <button type="button" tabindex="0" class="dropdown-item">Another Action</button>
-                                                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                                                            <button type="button" tabindex="0" class="dropdown-item">Another Action</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-primary"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox4" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox4"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading">Badge on the right task</div>
-                                                                    <div class="widget-subheading">This task has show on hover actions!</div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="widget-content-right ml-3">
-                                                                    <div class="badge badge-pill badge-success">Latest Task</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-info"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox2" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox2"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left mr-3">
-                                                                    <div class="widget-content-left">
-                                                                        <img width="42" class="rounded" src="images/avatars-1.jpg" alt=""></div>
-                                                                </div>
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-heading">Go grocery shopping</div>
-                                                                    <div class="widget-subheading">A short description for this todo item</div>
-                                                                </div>
-                                                                <div class="widget-content-right widget-content-actions">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                    <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                        <i class="fa fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <div class="todo-indicator bg-success"></div>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-2">
-                                                                    <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox3" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox3"> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading">Development Task</div>
-                                                                    <div class="widget-subheading">Finish React ToDo List App</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <div class="badge badge-warning mr-2">69</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <button class="border-0 btn-transition btn btn-outline-success">
-                                                                        <i class="fa fa-check"></i>
-                                                                    </button>
-                                                                    <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                        <i class="fa fa-trash-alt"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul></div>
-                                        </div>
-                                    </div>
-                                    <div class="d-block text-right card-footer">
-                                        <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-                                        <button class="btn btn-primary">Add Task</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-lg-6">
-                                <div class="card-hover-shadow-2x mb-3 card">
-                                    <div class="card-header-tab card-header">
-                                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="header-icon lnr-printer icon-gradient bg-ripe-malin"> </i>Chat Box</div>
-                                        <div class="btn-actions-pane-right text-capitalize actions-icon-btn">
-                                            <div class="btn-group dropdown">
-                                                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="pe-7s-menu btn-icon-wrapper"></i></button>
-                                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu"><h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                                    <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
-                                                    <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-file-empty"> </i><span>Settings</span></button>
-                                                    <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
-                                                    <div tabindex="-1" class="dropdown-divider"></div>
-                                                    <div class="p-3 text-right">
-                                                        <button class="mr-2 btn-shadow btn-sm btn btn-link">View Details</button>
-                                                        <button class="mr-2 btn-shadow btn-sm btn btn-primary">Action</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="scroll-area-lg">
-                                        <div class="scrollbar-container">
-                                            <div class="p-2">
-                                                <div class="chat-wrapper p-1">
-                                                    <div class="chat-box-wrapper">
-                                                        <div>
-                                                            <div class="avatar-icon-wrapper mr-1">
-                                                                <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
-                                                                <div class="avatar-icon avatar-icon-lg rounded">
-                                                                    <img src="images/avatars-2.jpg" alt=""></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="chat-box">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</div>
-                                                            <small class="opacity-6">
-                                                                <i class="fa fa-calendar-alt mr-1"></i>
-                                                                11:01 AM | Yesterday
-                                                            </small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="float-right">
-                                                        <div class="chat-box-wrapper chat-box-wrapper-right">
-                                                            <div>
-                                                                <div class="chat-box">Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</div>
-                                                                <small class="opacity-6">
-                                                                    <i class="fa fa-calendar-alt mr-1"></i>
-                                                                    11:01 AM | Yesterday
-                                                                </small>
-                                                            </div>
-                                                            <div>
-                                                                <div class="avatar-icon-wrapper ml-1">
-                                                                    <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
-                                                                    <div class="avatar-icon avatar-icon-lg rounded">
-                                                                        <img src="images/avatars-3.jpg" alt=""></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="chat-box-wrapper">
-                                                        <div>
-                                                            <div class="avatar-icon-wrapper mr-1">
-                                                                <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
-                                                                <div class="avatar-icon avatar-icon-lg rounded">
-                                                                    <img src="images/avatars-2.jpg" alt=""></div>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="chat-box">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</div>
-                                                            <small class="opacity-6">
-                                                                <i class="fa fa-calendar-alt mr-1"></i>
-                                                                11:01 AM | Yesterday
-                                                            </small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="float-right">
-                                                        <div class="chat-box-wrapper chat-box-wrapper-right">
-                                                            <div>
-                                                                <div class="chat-box">Denouncing pleasure and praising pain was born and I will give you a complete account.</div>
-                                                                <small class="opacity-6">
-                                                                    <i class="fa fa-calendar-alt mr-1"></i>
-                                                                    11:01 AM | Yesterday
-                                                                </small>
-                                                            </div>
-                                                            <div>
-                                                                <div class="avatar-icon-wrapper ml-1">
-                                                                    <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
-                                                                    <div class="avatar-icon avatar-icon-lg rounded">
-                                                                        <img src="images/avatars-2.jpg" alt=""></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="float-right">
-                                                        <div class="chat-box-wrapper chat-box-wrapper-right">
-                                                            <div>
-                                                                <div class="chat-box">The master-builder of human happiness.</div>
-                                                                <small class="opacity-6">
-                                                                    <i class="fa fa-calendar-alt mr-1"></i>
-                                                                    11:01 AM | Yesterday
-                                                                </small>
-                                                            </div>
-                                                            <div>
-                                                                <div class="avatar-icon-wrapper ml-1">
-                                                                    <div class="badge badge-bottom btn-shine badge-success badge-dot badge-dot-lg"></div>
-                                                                    <div class="avatar-icon avatar-icon-lg rounded">
-                                                                        <img src="images/avatars-2.jpg" alt=""></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <input placeholder="Write here and hit enter to send..." type="text" class="form-control-sm form-control"></div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="card no-shadow bg-transparent no-border rm-borders mb-3">
                             <div class="card">
                                 <div class="no-gutters row">
@@ -1642,6 +794,452 @@
                             </div>
                         </div>
                     </div>
+                   <?php }else {?>
+                    <div class="tabs-animation">
+                        <div class="row">
+                            <div class="col-lg-12 col-xl-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body"><h5 class="card-title">Income Report</h5>
+                                        <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                            <div style="height: 227px;">
+                                                <canvas id="line-chart"></canvas></div>
+                                        </div>
+                                        <h5 class="card-title">Target Sales</h5>
+                                        <div class="mt-3 row">
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="widget-content p-0">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-numbers text-dark">65%</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-progress-wrapper mt-1">
+                                                            <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                                                            </div>
+                                                            <div class="progress-sub-label">
+                                                                <div class="sub-label-left font-size-md">Sales</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="widget-content p-0">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-numbers text-dark">22%</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-progress-wrapper mt-1">
+                                                            <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 22%;"></div>
+                                                            </div>
+                                                            <div class="progress-sub-label">
+                                                                <div class="sub-label-left font-size-md">Profiles</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="widget-content p-0">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-numbers text-dark">83%</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-progress-wrapper mt-1">
+                                                            <div class="progress-bar-xs progress-bar-animated-alt progress">
+                                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="width: 83%;"></div>
+                                                            </div>
+                                                            <div class="progress-sub-label">
+                                                                <div class="sub-label-left font-size-md">Tickets</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-xl-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="grid-menu grid-menu-2col">
+                                        <div class="no-gutters row">
+                                            <div class="col-sm-6">
+                                                <div class="widget-chart widget-chart-hover">
+                                                    <div class="icon-wrapper rounded-circle">
+                                                        <div class="icon-wrapper-bg bg-primary"></div>
+                                                        <i class="lnr-cog text-primary"></i></div>
+                                                    <div class="widget-numbers">45.8k</div>
+                                                    <div class="widget-subheading">Total Views</div>
+                                                    <div class="widget-description text-success">
+                                                        <i class="fa fa-angle-up"></i>
+                                                        <span class="pl-1">175.5%</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="widget-chart widget-chart-hover">
+                                                    <div class="icon-wrapper rounded-circle">
+                                                        <div class="icon-wrapper-bg bg-info"></div>
+                                                        <i class="lnr-graduation-hat text-info"></i>
+                                                    </div>
+                                                    <div class="widget-numbers">63.2k</div>
+                                                    <div class="widget-subheading">Bugs Fixed</div>
+                                                    <div class="widget-description text-info">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                        <span class="pl-1">175.5%</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="widget-chart widget-chart-hover">
+                                                    <div class="icon-wrapper rounded-circle">
+                                                        <div class="icon-wrapper-bg bg-danger"></div>
+                                                        <i class="lnr-laptop-phone text-danger"></i>
+                                                    </div>
+                                                    <div class="widget-numbers">5.82k</div>
+                                                    <div class="widget-subheading">Reports Submitted</div>
+                                                    <div class="widget-description text-primary"><span class="pr-1">54.1%</span>
+                                                        <i class="fa fa-angle-up"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="widget-chart widget-chart-hover br-br">
+                                                    <div class="icon-wrapper rounded-circle">
+                                                        <div class="icon-wrapper-bg bg-success"></div>
+                                                        <i class="lnr-screen"></i></div>
+                                                    <div class="widget-numbers">17.2k</div>
+                                                    <div class="widget-subheading">Profiles</div>
+                                                    <div class="widget-description text-warning"><span class="pr-1">175.5%</span>
+                                                        <i class="fa fa-arrow-left"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-header">Active Users
+                                        <div class="btn-actions-pane-right">
+                                            <div role="group" class="btn-group-sm btn-group">
+                                                <button class="active btn btn-focus">Last Week</button>
+                                                <button class="btn btn-focus">All Month</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless table-striped table-hover"><thead><tr><th class="text-center">#</th>
+                                                <th>Name</th>
+                                                <th class="text-center">City</th>
+                                                <th class="text-center">Status</th>
+                                                <th class="text-center">Sales</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr></thead><tbody><tr><td class="text-center text-muted">#345</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="images/avatars-4.jpg" alt=""></div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">John Doe</div>
+                                                                <div class="widget-subheading opacity-7">Web Developer</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">Madrid</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-warning">Pending</div>
+                                                </td>
+                                                <td class="text-center" style="width: 150px;">
+                                                    <div class="pie-sparkline">2,4,6,9,4</div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr><tr><td class="text-center text-muted">#347</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="images/avatars-3.jpg" alt=""></div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">Ruben Tillman</div>
+                                                                <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">Berlin</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-success">Completed</div>
+                                                </td>
+                                                <td class="text-center" style="width: 150px;">
+                                                    <div id="sparkline-chart4"></div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr><tr><td class="text-center text-muted">#321</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="images/avatars-2.jpg" alt=""></div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">Elliot Huber</div>
+                                                                <div class="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">London</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-danger">In Progress</div>
+                                                </td>
+                                                <td class="text-center" style="width: 150px;">
+                                                    <div id="sparkline-chart8"></div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-3" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr><tr><td class="text-center text-muted">#55</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img width="40" class="rounded-circle" src="images/avatars-1.jpg" alt=""></div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                <div class="widget-subheading opacity-7">UI Designer</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">Amsterdam</td>
+                                                <td class="text-center">
+                                                    <div class="badge badge-info">On Hold</div>
+                                                </td>
+                                                <td class="text-center" style="width: 150px;">
+                                                    <div id="sparkline-chart9"></div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
+                                                </td>
+                                            </tr></tbody></table></div>
+                                    <div class="d-block text-center card-footer">
+                                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                        <button class="btn-wide btn btn-success">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-3">
+                            <h5 class="menu-header-title text-capitalize mb-3 fsize-3">Top Sellers Cards</h5>
+                            <div role="group" class="mb-3 btn-group-lg btn-group">
+                                <button type="button" class="btn-shadow active btn btn-primary">Hour</button>
+                                <button type="button" class="btn-shadow  btn btn-primary">Day</button>
+                                <button type="button" class="btn-shadow  btn btn-primary">Week</button>
+                                <button type="button" class="btn-shadow  btn btn-primary">Month</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6 col-xl-4">
+                                <div class="mb-3 profile-responsive card">
+                                    <div class="dropdown-menu-header">
+                                        <div class="dropdown-menu-header-inner bg-dark">
+                                            <div class="menu-header-image opacity-2" style="background-image: url('assets/images/dropdown-header/abstract2.jpg');"></div>
+                                            <div class="menu-header-content btn-pane-right">
+                                                <div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
+                                                    <div class="avatar-icon rounded"><img src="images/avatars-3.jpg" alt="Avatar 5"></div>
+                                                </div>
+                                                <div>
+                                                    <h5 class="menu-header-title">Jeff Walberg</h5>
+                                                    <h6 class="menu-header-subtitle">Lead UX Developer</h6>
+                                                </div>
+                                                <div class="menu-header-btn-pane">
+                                                    <button class="btn btn-success">View Profile</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush"><li class="list-group-item">
+                                            <div class="widget-content pt-1 pl-0 pr-0">
+                                                <div class="text-center">
+                                                    <h5 class="widget-heading opacity-4 mb-0">Month Totals</h5>
+                                                    <h6 class="mt-3 mb-3">
+                                                            <span class="pr-2">
+                                                            <b class="text-danger">12</b> new leads,
+                                                            </span>
+                                                        <span><b class="text-success">$56.24</b> in sales</span>
+                                                    </h6>
+                                                    <button class="btn-wide btn-pill btn btn-outline-primary">Full Report</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="p-0 list-group-item">
+                                            <div class="grid-menu grid-menu-2col">
+                                                <div class="no-gutters row">
+                                                    <div class="col-sm-6">
+                                                        <button class="btn-icon-vertical btn-square btn-transition br-bl btn btn-outline-link">
+                                                            <i class="lnr-license btn-icon-wrapper btn-icon-lg mb-3"> </i>
+                                                            View Profile
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <button class="btn-icon-vertical btn-square btn-transition br-br btn btn-outline-link">
+                                                            <i class="lnr-music-note btn-icon-wrapper btn-icon-lg mb-3"> </i>
+                                                            Leads Generated
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul></div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 col-xl-4">
+                                <div class="mb-3 profile-responsive card">
+                                    <div class="dropdown-menu-header">
+                                        <div class="dropdown-menu-header-inner bg-dark">
+                                            <div class="menu-header-image opacity-4" style="background-image: url('assets/images/dropdown-header/city1.jpg');"></div>
+                                            <div class="menu-header-content btn-pane-right">
+                                                <div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
+                                                    <div class="avatar-icon rounded">
+                                                        <img src="images/avatars-8.jpg" alt="Avatar 5"></div>
+                                                </div>
+                                                <div>
+                                                    <h5 class="menu-header-title">John Rosenberg</h5>
+                                                    <h6 class="menu-header-subtitle">Short profile description</h6>
+                                                </div>
+                                                <div class="menu-header-btn-pane">
+                                                    <button type="button" class="btn-wide btn-shadow btn-pill btn btn-warning">Refresh</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush"><li class="p-0 list-group-item">
+                                            <div class="widget-content">
+                                                <div class="text-center">
+                                                    <canvas id="doughnut-chart-2"></canvas></div>
+                                            </div>
+                                        </li>
+                                        <li class="p-0 list-group-item">
+                                            <div class="grid-menu grid-menu-2col">
+                                                <div class="no-gutters row">
+                                                    <div class="col-sm-6">
+                                                        <div class="p-1">
+                                                            <button class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-focus">
+                                                                <i class="lnr-sun text-primary opacity-7 btn-icon-wrapper mb-2"> </i>
+                                                                View Profile
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="p-1">
+                                                            <button class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-focus">
+                                                                <i class="lnr-magic-wand text-primary opacity-7 btn-icon-wrapper mb-2"> </i>
+                                                                View Leads
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul></div>
+                            </div>
+                            <div class="col-sm-12 col-lg-12 col-xl-4">
+                                <div class="mb-3 profile-responsive card">
+                                    <div class="dropdown-menu-header">
+                                        <div class="dropdown-menu-header-inner bg-dark">
+                                            <div class="menu-header-image opacity-1" style="background-image: url('assets/images/dropdown-header/abstract3.jpg');"></div>
+                                            <div class="menu-header-content btn-pane-right">
+                                                <div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
+                                                    <div class="avatar-icon rounded">
+                                                        <img src="images/avatars-1.jpg" alt="Avatar 5"></div>
+                                                </div>
+                                                <div>
+                                                    <h5 class="menu-header-title">Ruben Tillman</h5>
+                                                    <h6 class="menu-header-subtitle">Etiam sit amet orci eget</h6>
+                                                </div>
+                                                <div class="menu-header-btn-pane">
+                                                    <button class="btn btn-success">View Profile</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush"><li class="list-group-item">
+                                            <div class="widget-content pt-4 pb-4 pr-1 pl-1">
+                                                <div class="text-center">
+                                                    <h5 class="mb-0">
+                                                            <span class="pr-1">
+                                                                <b class="text-danger">12</b> new leads,
+                                                            </span>
+                                                        <span><b class="text-success">$56.24</b> in sales</span>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="p-0 list-group-item">
+                                            <div class="grid-menu grid-menu-2col">
+                                                <div class="no-gutters row">
+                                                    <div class="col-sm-6">
+                                                        <div class="p-1">
+                                                            <button class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-dark">
+                                                                <i class="lnr-lighter text-dark opacity-7 btn-icon-wrapper mb-2"> </i>
+                                                                Automation
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="p-1">
+                                                            <button class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
+                                                                <i class="lnr-construction text-danger opacity-7 btn-icon-wrapper mb-2"> </i>
+                                                                Reports
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="p-1">
+                                                            <button class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success">
+                                                                <i class="lnr-bus text-success opacity-7 btn-icon-wrapper mb-2"> </i>
+                                                                Activity
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="p-1">
+                                                            <button class="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-focus">
+                                                                <i class="lnr-gift text-focus opacity-7 btn-icon-wrapper mb-2"> </i>
+                                                                Settings
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul></div>
+                            </div>
+                        </div>
+                    </div>
+                   <?php } ?>
                 </div>
                
                 <?php $this->load->view('footer');?>

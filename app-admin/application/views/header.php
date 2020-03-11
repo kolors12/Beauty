@@ -560,15 +560,16 @@
                             </ul></div>
                     </div>
                 </div>
-                
+                <?php $sess_data = $this->session->all_userdata();?>
                 <div class="header-btn-lg pr-0">
                     <div class="widget-content p-0">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left">
                                 <div class="btn-group">
                                     <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn" href="architectui-html-pro.html">
-                                        <img width="42" class="rounded-circle" src="<?php echo base_url();?>assets/images/avatars-1.jpg" alt=""><i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        <img width="42" class="rounded-circle" src="<?php echo base_url();?><?php echo $sess_data['user_image'];?>" alt=""><i class="fa fa-angle-down ml-2 opacity-8"></i>
                                     </a>
+                                   
                                     <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-menu-header">
                                             <div class="dropdown-menu-header-inner bg-info">
@@ -577,11 +578,11 @@
                                                     <div class="widget-content p-0">
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
-                                                                <img width="42" class="rounded-circle" src="<?php echo base_url();?>assets/images/avatars-1.jpg" alt=""></div>
-                                                            <div class="widget-content-left">
-                                                                <div class="widget-heading">Alina Mcloughlin
+                                                                <img width="42" class="rounded-circle" src="<?php echo base_url();?><?php echo $sess_data['user_image'];?>" alt=""></div>
+                                                                <div class="widget-content-left">
+                                                                <div class="widget-heading"><?php echo $sess_data['name'];?>
                                                                 </div>
-                                                                <div class="widget-subheading opacity-8">A short profile description
+                                                                <div class="widget-subheading opacity-8"><?php echo $sess_data['admin_type'];?>
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-right mr-2">
@@ -655,10 +656,11 @@
                             </div>
                             <div class="widget-content-left  ml-3 header-user-info">
                                 <div class="widget-heading">
-                                    Alina Mclourd
+                               <?php echo $sess_data['name'];?>
+                                   
                                 </div>
                                 <div class="widget-subheading">
-                                    VP People Manager
+                                <Strong><?php echo  $sess_data['admin_type'];?></Strong>
                                 </div>
                             </div>
                             <div class="widget-content-right header-user-info ml-3">

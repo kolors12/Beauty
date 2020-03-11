@@ -14,17 +14,23 @@ class Brands extends CI_Controller {
 	}
 	public function brands_view()
 	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['brands'] = $this->Brands_model->get_brands();
 		$this->load->view('brands',$data);
 	}
 	public function add_brand()
-	{
+	{   
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$this->load->view('add_brand');
 	}
 
 
 	public function insert_brand()
-	{
+	{		
+		    $sess_data = $this->session->all_userdata();
+		    if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['name'] = $this->input->post('name');
 			$data['slug'] = $this->input->post('slug');
 			$data['cat_desc'] = $this->input->post('cat_desc');
@@ -60,7 +66,7 @@ class Brands extends CI_Controller {
 
 	 public function delete_brand($id)
 		{
-		$result = $this->Brands_model->delete_brand($id);
+		   $result = $this->Brands_model->delete_brand($id);
 		   if($result == 'true')
 			{
 				$this->load->helper('url');
@@ -89,16 +95,16 @@ class Brands extends CI_Controller {
 		}
 		public function edit_brand($id)
 		{
-			// $sess_data = $this->session->all_userdata();
-			// if($sess_data['user_id'] == '' ){redirect('login/login');}
+			$sess_data = $this->session->all_userdata();
+		    if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['view_edit_brand'] = $this->Brands_model->edit_brand($id);
 			$this->load->view('edit_brand',$data);
 			
 		}
 	public function update_brand()
     {
-		// $sess_data = $this->session->all_userdata();
-		// if($sess_data['user_id'] == '' ){redirect('login/login');}
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		
 		$id = $this->input->post('id');
 		$data['name'] = $this->input->post('name');

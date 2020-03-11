@@ -173,10 +173,10 @@
 							<div class="row">
                                 <div class="col-md-12">
                                    
-                                 <div class="main-card mb-3 card">
-								<div class="card-body">
+                               
+								
                            
-								<form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('vendors/insert_vendor');?>" enctype="multipart/form-data">
+								<form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('users/insert_user');?>" enctype="multipart/form-data">
 									
 								<div class="row">
 								
@@ -194,63 +194,54 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="vendor_name">Vendor Name</label>
+										<label for="vendor_name">User Name</label>
 										<div>
-										<input type="text" class="form-control" id="vendor_name" name="vendor_name" placeholder=" Please Enter Vendor Name"></div>
+										<input type="text" class="form-control" id="name" name="name" placeholder=" Please Enter User Name"></div>
+									</div>
+                                </div>
+                               <div class="col-md-6">
+									<div class="form-group">
+										<label for="mobile">User Mobile Number</label>
+										<div>
+										<input type="number" class="form-control" id="mobile" name="mobile" placeholder=" Please Enter User Mobile Number"></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="location">location</label>
+										<label for="email"> User Email</label>
 										<div>
-										<input type="text" class="form-control" id="location" name="location" placeholder="Last location"></div>
+										<input type="text" class="form-control" id="email" name="email" placeholder=" Please Enter User Email id"></div>
 									</div>
-								</div>
-								<div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
 									<div class="form-group">
-										<label for="address">Address</label>
+										<label for="password"> User Password</label>
 										<div>
-										 <textarea rows="1" class="form-control autosize-input" id="address" name="address" style="max-height: 200px; height: 35px;"></textarea>
-										</div>
+										<input type="password" class="form-control" id="password" name="password" placeholder=" Please Enter User Password"></div>
 									</div>
-								</div>
-								<div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
 									<div class="form-group">
-										<label for="latitude">latitude</label>
+										<label for="confirm_password">Confirm password</label>
 										<div>
-										<input type="text" class="form-control" id="latitude" name="latitude" placeholder=" Please Enter latitude"></div>
+										<input type="password" class="form-control" id="confirm_password" name="confirm_password"  placeholder=" Please Enter Confirm password"></div>
 									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-									<label for="longitude">Longitude</label>
-										<div>
-								   <input type="text" class="form-control" id="longitude" name="longitude" placeholder=" Please Enter longitude Number"></div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="mobile">phone</label>
-										<div>
-										<input type="text" class="form-control" id="phone" name="phone" placeholder=" Please Enter Phone Number"></div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="mobile">Mobile</label>
-										<div>
-										<input type="text" class="form-control" id="mobile" name="mobile" placeholder=" Please Enter Mobile Number"></div>
-									</div>
-								</div>
-								<div class="col-md-6">
+                                </div>
+                                <!-- <div class="col-md-6">
 									<div class="form-group">
 										<label for="email">Email</label>
 										<div>
 										<input type="text" class="form-control" id="email" name="email" placeholder=" Please Enter Email id"></div>
 									</div>
-								</div>
-			
-								<div class="col-md-6">
+                                </div> -->
+                                <!-- <div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Date of Birth</label>
+										<div>
+										<input type="text" class="form-control" id="dob" name="dob" data-toggle="datepicker" placeholder="Please Enter Your Date of Birth"></div>
+									</div>
+                                </div> -->
+                                <div class="col-md-6">
 										<div class="position-relative form-group">
 										<label for="exampleSelect" class="">Categories</label>
 										<select name="categories" id="exampleSelect" class="form-control">
@@ -260,74 +251,85 @@
 											<?php }?>
 										</select>
 									</div>
-								</div>
-								
-								
-								<div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
 									<div class="form-group">
-										<label for="address">About vendor</label>
-										<div>
-										 <textarea rows="1" class="form-control autosize-input" id="about_vendor" name="about_vendor" style="max-height: 200px; height: 35px;"></textarea>
-										</div>
-									</div>
-								</div>
-								
-								
-								<div class="col-md-6">
-									<div class="form-group">
-									<label for="user_image">photos</label>
+									<label for="user_image">User Image</label>
 									<div>
 									<input type="file" class="form-control" id="photos" name="photos" placeholder="Please Your State">
 										</div>
 									</div>
-								</div>
-								
-								<div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
+									<div class="form-group">
+										<label for="address">Address</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="address" name="address" style="max-height: 200px; height: 35px;"></textarea>
+										</div>
+									</div>
+                                </div>
+                                <div class="col-md-6">
 										<div class="position-relative form-group">
-										<label for="exampleSelect" class="">Job</label>
-										<select  name="job_division" id="job_division"  class="form-control">
-										<option value="">Please Categories</option>
-										<option value="Yes" selected="Yes">YES</option>
-										<option value="No" selected="NO">No</option>
+										<label for="exampleSelect" class="">User Type</label>
+										<select  name="admin_type" id="admin_type"  class="form-control">
+										<option value="">Please Select User</option>
+										<option value="Vender" >Vender</option>
+										<option value="Admin">Admin</option>
 										
 										</select>
 									</div>
-								</div>
-								
-								
-								
-							
-								
-								    <div id="jobdeatils" style="display: none">
-                                    <div class="col-md-6">
-									<div class="form-group">
-									<label for="user_image">photos</label>
-									<div>
-									<input type="text" class="form-control" id="photos" name="photos" placeholder="Please Your State">
-										</div>
-									</div>
-								    </div>
-									 <div class="col-md-6">
-									<div class="form-group">
-									<label for="user_image">photos</label>
-									<div>
-									<input type="text" class="form-control" id="photos" name="photos" placeholder="Please Your State">
-										</div>
-									</div>
-								    </div>
-                                
-                                   </div>
+                                </div>
+                               
+                                <div class="jobdeatils col-md-12">  
+                                <div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<button type="submit" class="ladda-button mb-2 mr-2 btn btn-info" name="signup" value="Sign up">Submit</button>
+										<label for="location">location</label>
+										<input type="text" class="form-control" id="location" name="location" placeholder="Last location" required="required">
 									</div>
 								</div>
-									
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="latitude">latitude</label>
+										
+										<input type="number" class="form-control" id="latitude" name="latitude" placeholder=" Please Enter latitude" required="required">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="longitude">Longitude</label>
+										
+								   <input type="number" class="form-control" id="longitude" name="longitude" placeholder=" Please Enter longitude Number" required="required"></div>
 									
 								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="address">About vendor</label>
+										
+										 <textarea rows="1" class="form-control autosize-input" id="about_vendor" name="about_vendor" style="max-height: 200px; height: 35px;" required="required"></textarea>
+										
+									</div>
+								</div>
+								
+								   
+                                </div>
+                                
+                            </div>    
+
+                           
+								
+									
+                                </div>
+                                <div class="col-md-6">
+									<div class="form-group">
+										<button type="submit" class="ladda-button mb-2 mr-2 btn btn-info" name="signup" value="Sign up" data-style="expand-right"><span class="ladda-label">Submit</span><span class="ladda-spinner"></span></button>
+									</div>
+                                    </div>
 							</form>
-								 </div>
-								</div>
+							
+							
                                 </div>
                                </div>
                         </div>
@@ -345,18 +347,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script>
-  $('#jobdeatils').hide();
-  $('#job_division').on('change', function(){
-    if($("#job_division option:selected").val()=='Yes'){
-      $('#jobdeatils').show();
-      $("#country").attr("required", "true");
-      $("#salary").attr("required", "true");
-      $("#city").attr("required", "true");
-      $("#org").attr("required", "true");
-      $("#designation").attr("required", "true");
+  $('.jobdeatils').hide();
+  $('#admin_type').on('change', function(){
+    if($("#admin_type option:selected").val()=='Vender'){
+      $('.jobdeatils').show();
+      $("#location").attr("required", "true");
+      $("#latitude").attr("required", "true");
+      $("#longitude").attr("required", "true");
+      $("#about_vendor").attr("required", "true");
+     
 
     }else{
-      $('#jobdeatils').hide();
+      $('.jobdeatils').hide();
 	   $("#country").removeAttr('required');
       $("#salary").removeAttr('required');
       $("#city").removeAttr('required');

@@ -13,12 +13,16 @@ class Cities extends CI_Controller {
 		 
 	}
 	public function cities_view()
-	{
+	{	
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['city'] = $this->Cities_model->get_cities();
 		$this->load->view('cities',$data);
 	}
 	public function add_insert()
-	{
+	{	
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$this->load->view('addcity');
 	}
 
@@ -72,7 +76,7 @@ class Cities extends CI_Controller {
 		public function edit_city($id)
 		{
 			$sess_data = $this->session->all_userdata();
-			if($sess_data['user_id'] == '' ){redirect('login/login');}
+		    if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['view_edit_city'] = $this->Cities_model->get_city_id($id);
 			$this->load->view('edit_city',$data);
 			
@@ -80,7 +84,7 @@ class Cities extends CI_Controller {
 	public function update_city()
     {
 		$sess_data = $this->session->all_userdata();
-		if($sess_data['user_id'] == '' ){redirect('login/login');}
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		
 		$id = $this->input->post('id');
 		$data['city_name'] = $this->input->post('city_name');

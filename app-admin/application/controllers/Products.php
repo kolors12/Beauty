@@ -21,19 +21,23 @@ class Products extends CI_Controller {
 		$data['category'] = $this->Products_model->get_category(); 
 		$this->load->view('products',$data);
 	}
-	public function add_users()
-	{
-		$this->load->view('add_users');
-	}
+	
 	public function view_product_details($id)
 	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['product_details'] = $this->Products_model->view_product_details($id);
 		$this->load->view('view_product_details',$data);
 	}
 
 
 	public function insert_product()
-	{
+	{	    
+		
+		    $sess_data = $this->session->all_userdata();
+		   if($sess_data['admin_id'] == '' ){redirect('login/index');}
+
+		   	$data['vendor_id'] = $sess_data['admin_id'];
 			$data['cat_id'] = $this->input->post('cat_id');
 			$data['sub_cat_id'] = $this->input->post('sub_cat_id');
 			$data['pro_type'] = $this->input->post('pro_type');
@@ -174,7 +178,7 @@ class Products extends CI_Controller {
 		public function edit_user($id)
 		{
 			$sess_data = $this->session->all_userdata();
-			if($sess_data['user_id'] == '' ){redirect('login/login');}
+			if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['view_edit_user'] = $this->Users_model->edit_user($id);
 			$this->load->view('edit_user',$data);
 			
@@ -182,7 +186,7 @@ class Products extends CI_Controller {
 	public function update_user()
     {
 		$sess_data = $this->session->all_userdata();
-		if($sess_data['user_id'] == '' ){redirect('login/login');}
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		
 		$id = $this->input->post('id');
 		$data['name'] = $this->input->post('lastname');

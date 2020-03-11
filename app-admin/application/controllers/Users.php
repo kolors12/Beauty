@@ -14,25 +14,35 @@ class Users extends CI_Controller {
 	}
 	public function users_view()
 	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		$data['users'] = $this->Users_model->get_users();
 		$this->load->view('users',$data);
 	}
 	public function add_users()
 	{
-		$this->load->view('add_users');
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
+		$data['city'] = $this->Users_model->get_city();
+		$data['category'] = $this->Users_model->get_category();
+		$this->load->view('add_users',$data);
 	}
 
 
 	public function insert_user()
 	{
-			$data['name'] = $this->input->post('lastname');
+			$data['city_id'] = $this->input->post('city_id');
+			$data['name'] = $this->input->post('name');
 			$data['email_id'] = $this->input->post('email');
 			$data['password'] = $this->input->post('password');
 			$data['mobile'] = $this->input->post('mobile');
+			$data['categories'] = $this->input->post('categories');
 			$data['address'] = $this->input->post('address');
-			$data['dob'] = $this->input->post('dob');
-			// $data['user_image'] = $this->input->post('user_image');
-			$data['admin_type'] = $this->input->post('admintype');
+			$data['admin_type'] = $this->input->post('admin_type');
+			$data['location'] = $this->input->post('location');
+			$data['latitude'] = $this->input->post('latitude');
+			$data['longitude'] = $this->input->post('longitude');
+			$data['about_vendor'] = $this->input->post('about_vendor');
 
 			/* birth_certificate Code*/
 			$configicon['upload_path'] = 'assets/userimage/'; # check path is correct
@@ -40,11 +50,11 @@ class Users extends CI_Controller {
 			$configicon['allowed_types'] = 'gif|jpg|png'; # add video extenstion on here
 			$configicon['overwrite'] = FALSE;
 			$configicon['remove_spaces'] = TRUE;
-			$profileimg =$_FILES['user_image']['name'];
+			$profileimg =$_FILES['photos']['name'];
 			$configicon['file_name'] = $profileimg;
 			$this->load->library('upload', $configicon);
 			$this->upload->initialize($configicon);
-			$this->upload->do_upload('user_image'); 
+			$this->upload->do_upload('photos'); 
 
 			$data['user_image']  = 'assets/userimage/'.$profileimg;
 			$result = $this->Users_model->insert_user($data);
@@ -93,16 +103,13 @@ class Users extends CI_Controller {
 		public function edit_user($id)
 		{
 			$sess_data = $this->session->all_userdata();
-			if($sess_data['user_id'] == '' ){redirect('login/login');}
+			if($sess_data['admin_id'] == '' ){redirect('login/index');}
 			$data['view_edit_user'] = $this->Users_model->edit_user($id);
 			$this->load->view('edit_user',$data);
 			
 		}
 	public function update_user()
     {
-		$sess_data = $this->session->all_userdata();
-		if($sess_data['user_id'] == '' ){redirect('login/login');}
-		
 		$id = $this->input->post('id');
 		$data['name'] = $this->input->post('lastname');
 		$data['email_id'] = $this->input->post('email');
@@ -111,7 +118,11 @@ class Users extends CI_Controller {
 		$data['address'] = $this->input->post('address');
 		$data['dob'] = $this->input->post('dob');
 		$data['admin_type'] = $this->input->post('admintype');
-		
+		$data['location'] = $this->input->post('location');
+		$data['latitude'] = $this->input->post('latitude');
+		$data['longitude'] = $this->input->post('longitude');
+		$data['about_vendor'] = $this->input->post('about_vendor');
+
 		/* birth_certificate Code*/
 		$profileimg =$_FILES['user_imagee']['name'];
 		if($profileimg){

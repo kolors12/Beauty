@@ -52,7 +52,8 @@ class Login extends CI_Controller {
 		  'location' => '',
 		  'admin_type' => '',
 		  'user_status' => '',
-		  'password' => '',
+		  'password' => '', 
+		  'user_image' => '',
 	  
 	  );
 	  $sess_data = $this->session->all_userdata();
