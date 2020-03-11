@@ -110,7 +110,7 @@
                     <div class="main-card mb-3 card">
                         <div class="card-body">
                            
-                            <form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('users/insert_user');?>" enctype="multipart/form-data">
+                            <!--form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php //echo base_url('users/insert_user');?>" enctype="multipart/form-data">
                                 
         
                                 <div class="form-group">
@@ -169,7 +169,167 @@
                                 <div class="form-group">
                                     <button type="submit" class="ladda-button mb-2 mr-2 btn btn-info" name="signup" value="Sign up">Submit</button>
                                 </div>
-                            </form>
+                            </form-->
+							<div class="row">
+                                <div class="col-md-12">
+                                   
+                                 <div class="main-card mb-3 card">
+								<div class="card-body">
+                           
+								<form id="signupForm" class="col-md-10 mx-auto" method="post" action="<?php echo base_url('vendors/insert_vendor');?>" enctype="multipart/form-data">
+									
+								<div class="row">
+								
+								
+								<div class="col-md-6">
+									<div class="position-relative form-group">
+										<label for="exampleSelect" class="">City</label>
+										<select name="city_id" id="exampleSelect" class="form-control">
+										<option value="">Please City</option>
+										<?php  foreach ($city as $row) {?>
+										<option value="<?php echo $row['city_id']?>"><?php echo $row['city_name']?></option>
+										<?php }?>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="vendor_name">Vendor Name</label>
+										<div>
+										<input type="text" class="form-control" id="vendor_name" name="vendor_name" placeholder=" Please Enter Vendor Name"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="location">location</label>
+										<div>
+										<input type="text" class="form-control" id="location" name="location" placeholder="Last location"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="address">Address</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="address" name="address" style="max-height: 200px; height: 35px;"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="latitude">latitude</label>
+										<div>
+										<input type="text" class="form-control" id="latitude" name="latitude" placeholder=" Please Enter latitude"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="longitude">Longitude</label>
+										<div>
+								   <input type="text" class="form-control" id="longitude" name="longitude" placeholder=" Please Enter longitude Number"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="mobile">phone</label>
+										<div>
+										<input type="text" class="form-control" id="phone" name="phone" placeholder=" Please Enter Phone Number"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="mobile">Mobile</label>
+										<div>
+										<input type="text" class="form-control" id="mobile" name="mobile" placeholder=" Please Enter Mobile Number"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="email">Email</label>
+										<div>
+										<input type="text" class="form-control" id="email" name="email" placeholder=" Please Enter Email id"></div>
+									</div>
+								</div>
+			
+								<div class="col-md-6">
+										<div class="position-relative form-group">
+										<label for="exampleSelect" class="">Categories</label>
+										<select name="categories" id="exampleSelect" class="form-control">
+										<option value="">Please Categories</option>
+											<?php  foreach ($category as $row) {?>
+										<option value="<?php echo $row ['id'];?>"><?php echo $row ['name'];?></option>
+											<?php }?>
+										</select>
+									</div>
+								</div>
+								
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="address">About vendor</label>
+										<div>
+										 <textarea rows="1" class="form-control autosize-input" id="about_vendor" name="about_vendor" style="max-height: 200px; height: 35px;"></textarea>
+										</div>
+									</div>
+								</div>
+								
+								
+								<div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">photos</label>
+									<div>
+									<input type="file" class="form-control" id="photos" name="photos" placeholder="Please Your State">
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+										<div class="position-relative form-group">
+										<label for="exampleSelect" class="">Job</label>
+										<select  name="job_division" id="job_division"  class="form-control">
+										<option value="">Please Categories</option>
+										<option value="Yes" selected="Yes">YES</option>
+										<option value="No" selected="NO">No</option>
+										
+										</select>
+									</div>
+								</div>
+								
+								
+								
+							
+								
+								    <div id="jobdeatils" style="display: none">
+                                    <div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">photos</label>
+									<div>
+									<input type="text" class="form-control" id="photos" name="photos" placeholder="Please Your State">
+										</div>
+									</div>
+								    </div>
+									 <div class="col-md-6">
+									<div class="form-group">
+									<label for="user_image">photos</label>
+									<div>
+									<input type="text" class="form-control" id="photos" name="photos" placeholder="Please Your State">
+										</div>
+									</div>
+								    </div>
+                                
+                                   </div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<button type="submit" class="ladda-button mb-2 mr-2 btn btn-info" name="signup" value="Sign up">Submit</button>
+									</div>
+								</div>
+									
+									
+								</div>
+							</form>
+								 </div>
+								</div>
+                                </div>
+                               </div>
                         </div>
                     </div>
                 </div>
@@ -180,4 +340,31 @@
 </div>
 <?php $this->load->view('right_top');?>
 
-<div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="<?php echo base_url();?>assets/js/scripts-main.87c0748b313a1dda75f5.js"></script></body></html>
+<div class="app-drawer-overlay d-none animated fadeIn"></div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/scripts-main.87c0748b313a1dda75f5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script>
+  $('#jobdeatils').hide();
+  $('#job_division').on('change', function(){
+    if($("#job_division option:selected").val()=='Yes'){
+      $('#jobdeatils').show();
+      $("#country").attr("required", "true");
+      $("#salary").attr("required", "true");
+      $("#city").attr("required", "true");
+      $("#org").attr("required", "true");
+      $("#designation").attr("required", "true");
+
+    }else{
+      $('#jobdeatils').hide();
+	   $("#country").removeAttr('required');
+      $("#salary").removeAttr('required');
+      $("#city").removeAttr('required');
+      $("#org").removeAttr('required');
+      $("#designation").removeAttr('required');
+    }
+
+});
+</script>
+</body>
+</html>
