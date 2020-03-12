@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2020 at 06:38 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Mar 12, 2020 at 04:06 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 5.6.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -32,6 +34,12 @@ CREATE TABLE `admin` (
   `email_id` varchar(255) DEFAULT NULL,
   `mobile` varchar(255) DEFAULT NULL,
   `address` longtext,
+  `categories` varchar(250) NOT NULL,
+  `location` varchar(250) NOT NULL,
+  `longitude` varchar(255) NOT NULL,
+  `latitude` varchar(255) NOT NULL,
+  `about_vendor` text NOT NULL,
+  `city_id` int(10) NOT NULL,
   `dob` date DEFAULT NULL,
   `user_image` longtext,
   `password` varchar(255) DEFAULT NULL,
@@ -45,10 +53,11 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `name`, `email_id`, `mobile`, `address`, `dob`, `user_image`, `password`, `admin_type`, `user_status`, `dateCreated`, `updatedOn`) VALUES
-(7, 'Bhaskara rasd', 'bhaskars@gmail.com', '8500630359', 'dfsfds', '0000-00-00', 'assets/userimage/Chrysanthemum.jpg', NULL, 'Admin', 1, NULL, NULL),
-(6, 'suggu', 'suggu@gmail.com', '8500630362', 'suggu', '0000-00-00', 'assets/userimage/Jellyfish.jpg', NULL, 'Vender', 0, NULL, NULL),
-(8, 'Sugggu', 'sugg@gmail.com', '8500630362', 'erragadda', '0000-00-00', 'assets/userimage/Chrysanthemum.jpg', '12345', 'Admin', 1, NULL, NULL);
+INSERT INTO `admin` (`admin_id`, `name`, `email_id`, `mobile`, `address`, `categories`, `location`, `longitude`, `latitude`, `about_vendor`, `city_id`, `dob`, `user_image`, `password`, `admin_type`, `user_status`, `dateCreated`, `updatedOn`) VALUES
+(7, 'Bhaskara rao Suggu', 'Admin@gmail.com', '8500630359', 'dfsfds', '', '', '', '', '', 0, '0000-00-00', 'assets/userimage/Chrysanthemum.jpg', '12345', 'Admin', 0, NULL, NULL),
+(6, 'suggu', 'suggu@gmail.com', '8500630362', 'suggu', '', '', '', '', '', 0, '0000-00-00', 'assets/userimage/Jellyfish.jpg', '1234', 'Vender', 0, NULL, NULL),
+(9, 'suggu41', 'suggu41@gmail.com', '8500630362', 'hgf hgf hfg h', '6', '', '', '', '', 8, NULL, 'assets/userimage/Hydrangeas.jpg', '12345', 'Admin', 0, NULL, NULL),
+(10, 'bujji', 'bujji@gmail.com', '8500630362', 'Erragadda', '7', 'gfdsgfdsg', '3213123213', '2313123123', ' 21321 v3213v213v21321v3', 8, NULL, 'assets/userimage/Lighthouse.jpg', '123456', 'Vender', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -74,7 +83,7 @@ CREATE TABLE `banners` (
 INSERT INTO `banners` (`cat_id`, `lang_id`, `cat_name`, `cat_desc`, `cat_image`, `status`, `banner_type`, `dateCreated`) VALUES
 (1, 44, 'gfd', 'gfd gdf gdf gfd', 'assets/banners/Hydrangeas.jpg', 0, 0, '0000-00-00 00:00:00'),
 (2, 3, 'vcxzvcxz', 'vcxzvcxzv', 'assets/banners/Chrysanthemum.jpg', 0, 1, '0000-00-00 00:00:00'),
-(3, 0, 'suggu', ' suggu', 'assets/banners/Chrysanthemum.jpg', 0, 0, '0000-00-00 00:00:00');
+(3, 0, 'suggu', ' suggu', 'assets/banners/Chrysanthemum.jpg', 1, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -84,11 +93,11 @@ INSERT INTO `banners` (`cat_id`, `lang_id`, `cat_name`, `cat_desc`, `cat_image`,
 
 CREATE TABLE `brands` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `brand_name` varchar(255) NOT NULL,
   `slug` text,
   `cat_image` varchar(255) DEFAULT NULL,
   `cat_desc` text,
-  `status` int(1) NOT NULL DEFAULT '1',
+  `brand_status` int(1) NOT NULL DEFAULT '1',
   `seo_title` longtext,
   `seo_desc` longtext,
   `seo_keywords` longtext,
@@ -100,11 +109,11 @@ CREATE TABLE `brands` (
 -- Dumping data for table `brands`
 --
 
-INSERT INTO `brands` (`id`, `name`, `slug`, `cat_image`, `cat_desc`, `status`, `seo_title`, `seo_desc`, `seo_keywords`, `created_at`, `updated_at`) VALUES
-(3, 'brand', 'Slug', 'assets/brands/123450.jpg', 'Cat Description', 1, 'seo title', 'seo Desc', 'Seo Key', '0000-00-00 00:00:00', '2020-03-02 13:38:45'),
-(5, 'gfdshgfdhfgdh', 'gfdshfgdhgfd', 'assets/brands/Desert.jpg', 'fdsghgfdhgfdhbcvx bvcxbvcbvc', 1, 'gfdshgfdhgfdx bvcx bvcb', 'gdfshfgdhfgb vcxb vcx', 'gfdshfgdh vcx bvcxbvcx', '0000-00-00 00:00:00', '2020-03-02 13:38:43'),
-(6, 'bhaskar', 'zxvzv', 'assets/brands/Chrysanthemum.jpg', 'vxcvxc c', 1, 'vxxc vxcv', ' xvx vcx v', 'x cv xc cx cx xc ', '0000-00-00 00:00:00', '2020-03-08 06:49:06'),
-(7, 'bcx', 'bxc', 'assets/brands/Desert.jpg', 'bx', 1, 'xcbc', 'bxbxbxcbx', 'bxc bcx', '0000-00-00 00:00:00', '2020-03-08 06:49:24');
+INSERT INTO `brands` (`id`, `brand_name`, `slug`, `cat_image`, `cat_desc`, `brand_status`, `seo_title`, `seo_desc`, `seo_keywords`, `created_at`, `updated_at`) VALUES
+(3, 'brand', 'Slug', 'assets/brands/123450.jpg', 'Cat Description', 1, 'seo title', 'seo Desc', 'Seo Key', '0000-00-00 00:00:00', '2020-03-12 14:51:37'),
+(5, 'gfdshgfdhfgdh', 'gfdshfgdhgfd', 'assets/brands/Desert.jpg', 'fdsghgfdhgfdhbcvx bvcxbvcbvc', 0, 'gfdshgfdhgfdx bvcx bvcb', 'gdfshfgdhfgb vcxb vcx', 'gfdshfgdh vcx bvcxbvcx', '0000-00-00 00:00:00', '2020-03-12 14:48:32'),
+(6, 'bhaskar', 'zxvzv', 'assets/brands/Chrysanthemum.jpg', 'vxcvxc c', 0, 'vxxc vxcv', ' xvx vcx v', 'x cv xc cx cx xc ', '0000-00-00 00:00:00', '2020-03-12 14:51:34'),
+(7, 'bcx', 'bxc', 'assets/brands/Desert.jpg', 'bx', 0, 'xcbc', 'bxbxbxcbx', 'bxc bcx', '0000-00-00 00:00:00', '2020-03-12 14:51:32');
 
 -- --------------------------------------------------------
 
@@ -149,7 +158,7 @@ CREATE TABLE `category` (
   `created_at` datetime NOT NULL,
   `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `brand_id` int(11) NOT NULL,
-  `sequence` int(11) DEFAULT NULL,
+  `sequence` varchar(11) DEFAULT NULL,
   `seo_title` longtext,
   `seo_desc` longtext,
   `seo_keywords` longtext
@@ -160,11 +169,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `image`, `image2`, `parent_id`, `cat_desc`, `status`, `created_at`, `update_at`, `brand_id`, `sequence`, `seo_title`, `seo_desc`, `seo_keywords`) VALUES
-(2, 'cate', 'slug2', 'assets/brands/', 'assets/brands/', 0, 'cat desc', 1, '0000-00-00 00:00:00', '2020-03-02 15:07:47', 0, 1, 'seo title', 'seo desc', 'seo keyword'),
-(4, 'gdfs', 'gdfsg', 'assets/category/Desert.jpg', 'assets/category/', 22, '22', 1, '0000-00-00 00:00:00', '2020-03-02 15:10:58', 0, 0, 'fds', 'fdsf', 'fds'),
-(5, 'hfdg', 'hfdg', 'assets/category/Hydrangeas.jpg', 'assets/category/', 654364, 'hgfd', 0, '0000-00-00 00:00:00', '2020-03-08 18:30:04', 0, 0, 'hfdgh', 'hgfdhgfd', 'hgfdhgfdh'),
-(6, 'gdsf', 'gfdsg', 'assets/category/Desert.jpg', 'assets/category/Desert.jpg', 3654, '65464', 0, '0000-00-00 00:00:00', '2020-03-08 18:29:38', 0, 0, 'gdfg', 'gdfg', 'gdfg'),
-(7, 'gfds', 'gfds', 'assets/category/Desert.jpg', 'assets/category/Desert.jpg', 4444, 'gdfsgfds', 0, '0000-00-00 00:00:00', '2020-03-08 18:29:31', 0, 0, 'gfdsg', 'gfdsgfdsg', 'gfdsgfdsg');
+(6, 'gdsf', 'gfdsg', 'assets/category/Desert.jpg', 'assets/category/Penguins.jpg', 3654, '65464', 1, '0000-00-00 00:00:00', '2020-03-12 14:34:04', 3, '44', 'gdfg', 'gdfg', 'gdfg'),
+(9, 'category Name sugu', 'Slug', 'assets/category/Tulips.jpg', 'assets/category/Chrysanthemum.jpg', 123, 'category Description', 1, '0000-00-00 00:00:00', '2020-03-12 14:34:06', 6, '33gghjhj', 'Seo Titled', 'Seo Descriptiond', 'Seo Keywordsd');
 
 -- --------------------------------------------------------
 
@@ -296,7 +302,8 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`prod_id`, `vendor_id`, `cat_id`, `sub_cat_id`, `pro_type`, `lang_id`, `pro_name`, `slug`, `hsn_code`, `bullet_points`, `pro_priority`, `pro_image`, `pro_image_2`, `pro_image_3`, `pro_image_4`, `pro_image_5`, `pro_short_desc`, `pro_price`, `pro_desc`, `qty`, `pro_category`, `pro_brand`, `pro_dim`, `pro_model`, `pro_sku`, `pro_weight`, `series`, `specification`, `pro_prices`, `spl_discount`, `extra_fields`, `top_deal_order`, `seo_title`, `seo_desc`, `seo_keywords`, `status`, `dateCreated`) VALUES
 (2, NULL, 3, 0, 111, '32423', 'suggu', 'fdsfsdfsdf', 'fdsfdsfsdfdsf', '1. df  gfd gdf gdf gdgdfg d          2. dfg dfgdfg dfg dfg dfg df', 33, 'assets/products/Chrysanthemum.jpg', 'assets/products/Desert.jpg', 'assets/products/Jellyfish.jpg', 'assets/products/Jellyfish.jpg', 'assets/products/Hydrangeas.jpg', '1. df  gfd gdf gdf gdgdfg d          2. dfg dfgdfg dfg dfg dfg df', 'dfgdfgdfgdfg', '1. df  gfd gdf gdf gdgdfg d          2. dfg dfgdfg dfg dfg dfg df', 5555, NULL, 'gdf gd  gdf gdf', 'gdf gdfgdf', ' dfg df', 'g dfg dfg ', ' gdf', ' gdfg df', ' dfg df', ' gdf', ' dfgdf', ' dfg df', 0, ' gdfg df', ' dg df', 'g gdfg dfg', 0, NULL),
-(3, NULL, 3, 0, 111, '32423', 'suggu', 'fdsfsdfsdf', 'fdsfdsfsdfdsf', 'fdsfsdfds f sd', 33, 'assets/products/Chrysanthemum.jpg', 'assets/products/Desert.jpg', 'assets/products/Jellyfish.jpg', 'assets/products/Jellyfish.jpg', 'assets/products/Hydrangeas.jpg', NULL, 'dfgdfgdfgdfg', NULL, 5555, NULL, 'gdf gd  gdf gdf', 'gdf gdfgdf', ' dfg df', 'g dfg dfg ', ' gdf', ' gdfg df', ' dfg df', ' gdf', ' dfgdf', ' dfg df', 0, ' gdfg df', ' dg df', 'g gdfg dfg', 0, NULL);
+(3, NULL, 3, 0, 111, '32423', 'suggu', 'fdsfsdfsdf', 'fdsfdsfsdfdsf', 'fdsfsdfds f sd', 33, 'assets/products/Chrysanthemum.jpg', 'assets/products/Desert.jpg', 'assets/products/Jellyfish.jpg', 'assets/products/Jellyfish.jpg', 'assets/products/Hydrangeas.jpg', NULL, 'dfgdfgdfgdfg', NULL, 5555, NULL, 'gdf gd  gdf gdf', 'gdf gdfgdf', ' dfg df', 'g dfg dfg ', ' gdf', ' gdfg df', ' dfg df', ' gdf', ' dfgdf', ' dfg df', 0, ' gdfg df', ' dg df', 'g gdfg dfg', 0, NULL),
+(4, 7, 5, 1, 5345345, '5435345', '5435345', '543543', '5435345', '5435 34 543543 5435', 2147483647, 'assets/products/Koala.jpg', 'assets/products/Hydrangeas.jpg', 'assets/products/Koala.jpg', 'assets/products/Desert.jpg', 'assets/products/Lighthouse.jpg', NULL, 'g dfsg', NULL, 55, NULL, 'g dfsg', ' gdfsg', ' gfdsgfdsg', ' gdfsg', ' gdfg', ' dgfgs', ' gdfsgfd', 'g dfsg', ' dgsf', ' gdsfg', 0, ' dgfsg', ' gdfg', ' gdsfgfd', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -333,8 +340,7 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`sub_cat_id`, `lang_id`, `cat_id`, `sub_cat_name`, `sub_cat_desc`, `sub_cat_image`, `sub_cat_banner_image`, `status`, `dateCreated`) VALUES
-(1, 534, 7, '543', '53454', 'assets/sub_category/Hydrangeas.jpg', 'assets/sub_category/Desert.jpg', 0, '0000-00-00 00:00:00'),
-(2, 23424234, 7, 'tertert', 'tretert', 'assets/sub_category/Desert.jpg', 'assets/sub_category/Desert.jpg', 0, '0000-00-00 00:00:00');
+(2, 23424234, 9, 'tertert', 'tretert', 'assets/sub_category/Tulips.jpg', 'assets/sub_category/Desert.jpg', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -409,6 +415,7 @@ CREATE TABLE `vendors` (
   `categories` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'SPA / Unisex Salon/ Massagaes',
   `about_vendor` longtext COLLATE utf8_unicode_ci NOT NULL,
   `photos` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1',
   `dateCreated` datetime NOT NULL,
   `extra` int(11) NOT NULL
@@ -418,10 +425,9 @@ CREATE TABLE `vendors` (
 -- Dumping data for table `vendors`
 --
 
-INSERT INTO `vendors` (`vendor_id`, `city_id`, `name`, `location`, `address`, `latitude`, `longitude`, `phone_no`, `mobile_no`, `email_id`, `categories`, `about_vendor`, `photos`, `status`, `dateCreated`, `extra`) VALUES
-(7, 8, 'suggu', 'sd', 'VALLABHARAOPETA 1-83\r\nPATHIVADAPALAM', '1222fds', 'suggu', '08500630362', '08187871138', 'bhaskarsuggu41@gmail.com', 'Admin', 'ghfgfg', 'assets/vendors/Jellyfish.jpg', 0, '0000-00-00 00:00:00', 0),
-(8, 9, 'suggu', 'sd', 'VALLABHARAOPETA 1-83\r\nPATHIVADAPALAM', 'cbv', 'suggu', '08500630362', '08500630362', 'bhaskarsuggu41@gmail.com', 'Admin', 'vnvbnvbn', 'assets/vendors/Hydrangeas.jpg', 0, '0000-00-00 00:00:00', 0),
-(9, 8, 'suggu', 'sd', 'VALLABHARAOPETA 1-83\r\nPATHIVADAPALAM', '1222fds', '1233', '08500630362', '08500630362', 'bhaskarsuggu41@gmail.com', '6', 'gdfgdfgdf', 'assets/vendors/Hydrangeas.jpg', 0, '0000-00-00 00:00:00', 0);
+INSERT INTO `vendors` (`vendor_id`, `city_id`, `name`, `location`, `address`, `latitude`, `longitude`, `phone_no`, `mobile_no`, `email_id`, `categories`, `about_vendor`, `photos`, `password`, `status`, `dateCreated`, `extra`) VALUES
+(7, 8, 'suggu', 'sd', 'VALLABHARAOPETA 1-83\r\nPATHIVADAPALAM', '1222fds', 'suggu', '08500630362', '08187871138', 'bhaskarsuggu41@gmail.com', 'Admin', 'ghfgfg', 'assets/vendors/Jellyfish.jpg', '1234', 1, '0000-00-00 00:00:00', 0),
+(10, 8, 'suggu', 'sd', 'VALLABHARAOPETA 1-83\r\nPATHIVADAPALAM', '1222fds', 'suggu', '08500630362', '08187871138', 'suggu41@gmail.com', 'Admin', 'ghfgfg', 'assets/vendors/Jellyfish.jpg', '123', 1, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -586,87 +592,105 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
   MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `bu_users`
 --
 ALTER TABLE `bu_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
   MODIFY `city_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT for table `login_history`
 --
 ALTER TABLE `login_history`
   MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `related_products`
 --
 ALTER TABLE `related_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
   MODIFY `sub_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `user_addresses`
 --
 ALTER TABLE `user_addresses`
   MODIFY `ua_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `vendor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `vendor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `web_settings`
 --
 ALTER TABLE `web_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
   MODIFY `fav_id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
