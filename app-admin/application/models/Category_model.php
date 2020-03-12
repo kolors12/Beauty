@@ -15,13 +15,18 @@ class Category_model extends CI_Model {
 		$result = $query_result->result_array();
 		return $result;
 	}
+
+
 	public function get_category()
 	{
-		$this->db->order_by('id', 'Desc');
-		$query_result=$this->db->get('category');
-		$result = $query_result->result_array();
+		$this->db->select('category.name,category.status,category.image,category.image2,category.parent_id,category.cat_desc,category.sequence,category.seo_title,
+		category.seo_desc,category.seo_keywords,category.id,category.slug,brands.brand_name');
+		$this->db->from('category');
+		$this->db->join('brands','brands.id = category.brand_id');
+		$query=$this->db->get();
+		$result=$query->result_array();
 		return $result;
-	}
+	} 
 	public function delete_category($id)
 	{
 		$this->db->where('id',$id);
@@ -41,15 +46,15 @@ class Category_model extends CI_Model {
 		$this->db->where(array('id' =>$id))->set(array('status' =>(int)$value))->update('category');
 		return true;
 	}
-	public function edit_brand($id)
+	public function edit_category($id)
 	{
-		$query=$this->db->where(array('id' =>$id))->get('brands');
+		$query=$this->db->where(array('id' =>$id))->get('category');
 		$result = $query->result_array();
 		return $result;
 	}
-	public function update_brand($id,$data)
+	public function update_category($id,$data)
 	{
-		$this->db->where(array('id' =>$id))->set($data)->update('brands');
+		$this->db->where(array('id' =>$id))->set($data)->update('category');
 		return true;
 	}
 

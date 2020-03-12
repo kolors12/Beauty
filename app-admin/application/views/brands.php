@@ -145,7 +145,7 @@
 										?>	
                                         <tr>
                                         <td><?php echo $i;?></td>
-                                        <td><?php echo $row['name']?></td>
+                                        <td><?php echo $row['brand_name']?></td>
                                         <td><?php echo $row['cat_desc']?></td>
                                         <td><img src="<?php echo base_url(); ?><?php echo $row['cat_image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="80" width="80" alt="Avatar" class="w35 h35 rounded"></td>
                                         <td> <?php echo $row['seo_title']?></td>
@@ -153,7 +153,7 @@
                                         <td> <?php echo $row['seo_keywords']?></td>
                                         
                                         <td scope="row">
-                                        <?php if($row['status'] == "0")
+                                        <?php if($row['brand_status'] == "0")
                                         { ?>
                                        
                                         <span class="mb-2 mr-2 badge badge-pill badge-danger"> Inactive</span>
@@ -167,7 +167,7 @@
                                         </td>
                                       
                                         <td>
-                                        <?php if ($row['status'] == '1') { ?>
+                                        <?php if ($row['brand_status'] == '1') { ?>
                                         <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>brands/brand_status/<?php echo $row['id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus"><span  class="pe-7s-door-lock" title="Inactive"></span></a>
                                         <?php } else { ?>
                                         <a  Onclick="return Active();" href="<?php echo base_url(); ?>brands/brand_status/<?php echo $row['id'].'/1'?>" data-toggle="tooltip" title="Active" class="btn btn-sm btn-success changestatus"><span class="pe-7s-door-lock" title="Active"></span></a>

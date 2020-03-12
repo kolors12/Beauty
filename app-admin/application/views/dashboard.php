@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Language" content="en">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Admin Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php $sess_data = $this->session->all_userdata();
+if($sess_data['admin_type'] == 'Admin' ){ ?>
+<title>Admin Dashboard</title>
+<?php }else {?>
+<title>Vendor Dashboard</title>
+<?php }?>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 <meta name="description" content="This is an example dashboard created using build-in elements and components."><!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no"><link href="<?php echo base_url();?>assets/css/.-main.87c0748b313a1dda75f5.css" rel="stylesheet"></head><body>
@@ -85,7 +91,7 @@
                                     <i class="pe-7s-car icon-gradient bg-mean-fruit">
                                     </i>
                                 </div>
-                             <?php $sess_data = $this->session->all_userdata();
+                                <?php 
 			                    if($sess_data['admin_type'] == 'Admin' ){ ?>
                                 <div>Admin Dashboard </div>
                                 <?php } else {?> 

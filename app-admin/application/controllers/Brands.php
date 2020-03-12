@@ -107,7 +107,7 @@ class Brands extends CI_Controller {
 		if($sess_data['admin_id'] == '' ){redirect('login/index');}
 		
 		$id = $this->input->post('id');
-		$data['name'] = $this->input->post('name');
+		$data['brand_name'] = $this->input->post('name');
 		$data['slug'] = $this->input->post('slug');
 		$data['cat_desc'] = $this->input->post('cat_desc');
 		$data['seo_title'] = $this->input->post('seo_title');

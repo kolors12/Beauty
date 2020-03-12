@@ -112,15 +112,16 @@ class Category extends CI_Controller {
 			}
 			
 		}
-		public function edit_brand($id)
+		public function edit_category($id)
 		{
 			$sess_data = $this->session->all_userdata();
-		    if($sess_data['admin_id'] == '' ){redirect('login/index');}
-			$data['view_edit_brand'] = $this->Category_model->edit_brand($id);
-			$this->load->view('edit_brand',$data);
+			if($sess_data['admin_id'] == '' ){redirect('login/index');}
+			
+			$data['view_edit_category'] = $this->Category_model->edit_category($id);
+			$this->load->view('edit_category',$data);
 			
 		}
-	public function update_brand()
+	public function update_category()
     {
 		$sess_data = $this->session->all_userdata();
 		if($sess_data['admin_id'] == '' ){redirect('login/index');}
@@ -128,36 +129,54 @@ class Category extends CI_Controller {
 		$id = $this->input->post('id');
 		$data['name'] = $this->input->post('name');
 		$data['slug'] = $this->input->post('slug');
+		$data['parent_id'] = $this->input->post('parent_id');
 		$data['cat_desc'] = $this->input->post('cat_desc');
+		$data['brand_id'] = $this->input->post('brand_id');
+		$data['sequence'] = $this->input->post('sequence');
 		$data['seo_title'] = $this->input->post('seo_title');
 		$data['seo_desc'] = $this->input->post('seo_desc');
 		$data['seo_keywords'] = $this->input->post('seo_keywords');
-		/* birth_certificate Code*/
-		$profileimg =$_FILES['cat_image']['name'];
+		/* Image Code*/
+		$profileimg =$_FILES['image']['name'];
 		if($profileimg){
-		$configicon['upload_path'] = 'assets/brands/'; # check path is correct
+		$configicon['upload_path'] = 'assets/category/'; # check path is correct
 		$configicon['max_size'] = '10240000';
 		$configicon['allowed_types'] = 'gif|jpg|png'; # add video extenstion on here
 		$configicon['overwrite'] = FALSE;
 		$configicon['remove_spaces'] = TRUE;
-		$profileimg =$_FILES['cat_image']['name'];
+		$profileimg =$_FILES['image']['name'];
 		$configicon['file_name'] = $profileimg;
 		$this->load->library('upload', $configicon);
 		$this->upload->initialize($configicon);
-		$this->upload->do_upload('cat_image'); 
-		$data['cat_image']  = 'assets/brands/'.$profileimg;		
+		$this->upload->do_upload('image'); 
+		$data['image']  = 'assets/category/'.$profileimg;		
+		}
+		/* Image2 Code*/
+		$profileimg2 =$_FILES['imagees2']['name'];
+		if($profileimg2){
+		$configicon2['upload_path'] = 'assets/category/'; # check path is correct
+		$configicon2['max_size'] = '10240000';
+		$configicon2['allowed_types'] = 'gif|jpg|png'; # add video extenstion on here
+		$configicon2['overwrite'] = FALSE;
+		$configicon2['remove_spaces'] = TRUE;
+		$profileimg2 =$_FILES['imagees2']['name'];
+		$configicon['file_name'] = $profileimg2;
+		$this->load->library('upload', $configicon2);
+		$this->upload->initialize($configicon2);
+		$this->upload->do_upload('imagees2'); 
+		$data['image2']  = 'assets/category/'.$profileimg2;		
 		}
 		
-		$result = $this->Brands_model->update_brand($id,$data);
+		$result = $this->Category_model->update_category($id,$data);
 		
 		if($result == 'true')
 		{
 			$this->load->helper('url');
-			$this->session->set_flashdata('message2','Brand Successfully Updated');
-			redirect('brands/brands_view');
+			$this->session->set_flashdata('message2','Category Successfully Updated');
+			redirect('category/category_view');
 		} else {
 			$this->load->helper('url');
-			redirect('brands/edit_brand');
+			redirect('category/edit_category');
 		}
     }
 

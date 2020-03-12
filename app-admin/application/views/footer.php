@@ -323,7 +323,7 @@
                             </div>
                             <div class="app-footer-right">
                                 <ul class="header-megamenu nav"><li class="nav-item">
-                                        <a data-placement="top" rel="popover-focus" data-offset="300" data-toggle="popover-custom" class="nav-link" href="architectui-html-pro.html">
+                                        <a data-placement="top" rel="popover-focus" data-offset="300" data-toggle="popover-custom" class="nav-link" href="javascript:void(0)">
                                             Footer Menu
                                             <i class="fa fa-angle-up ml-2 opacity-8"></i>
                                         </a>
@@ -357,7 +357,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a data-placement="top" rel="popover-focus" data-offset="300" data-toggle="popover-custom" class="nav-link" href="architectui-html-pro.html">
+                                        <a data-placement="top" rel="popover-focus" data-offset="300" data-toggle="popover-custom" class="nav-link" href="javascript:void(0)">
                                             Grid Menu
                                             <div class="badge badge-dark ml-0 ml-1">
                                                 <small>NEW</small>

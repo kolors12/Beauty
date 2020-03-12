@@ -15,13 +15,24 @@ class Sub_Category_model extends CI_Model {
 		$result = $query_result->result_array();
 		return $result;
 	}
+	// public function get_sub_category()
+	// {
+	// 	$this->db->order_by('sub_cat_id', 'Desc');
+	// 	$query_result=$this->db->get('sub_categories');
+	// 	$result = $query_result->result_array();
+	// 	return $result;
+	// }
+
 	public function get_sub_category()
 	{
-		$this->db->order_by('sub_cat_id', 'Desc');
-		$query_result=$this->db->get('sub_categories');
-		$result = $query_result->result_array();
+		$this->db->select('sub_categories.lang_id,sub_categories.sub_cat_name,sub_categories.sub_cat_desc,sub_categories.sub_cat_image,sub_categories.sub_cat_banner_image,
+		sub_categories.status,sub_categories.sub_cat_id,category.name');
+		$this->db->from('sub_categories');
+		$this->db->join('category','category.id = sub_categories.cat_id');
+		$query=$this->db->get();
+		$result=$query->result_array();
 		return $result;
-	}
+	} 
 	public function delete_sub_category($id)
 	{
 		$this->db->where('sub_cat_id',$id);
@@ -41,15 +52,15 @@ class Sub_Category_model extends CI_Model {
 		$this->db->where(array('sub_cat_id' =>$id))->set(array('status' =>(int)$value))->update('sub_categories');
 		return true;
 	}
-	public function edit_brand($id)
+	public function edit_sub_category($id)
 	{
-		$query=$this->db->where(array('id' =>$id))->get('brands');
+		$query=$this->db->where(array('sub_cat_id' =>$id))->get('sub_categories');
 		$result = $query->result_array();
 		return $result;
 	}
-	public function update_brand($id,$data)
+	public function update_sub_category($id,$data)
 	{
-		$this->db->where(array('id' =>$id))->set($data)->update('brands');
+		$this->db->where(array('sub_cat_id' =>$id))->set($data)->update('sub_categories');
 		return true;
 	}
 

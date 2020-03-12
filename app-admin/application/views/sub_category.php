@@ -147,7 +147,7 @@
                                         <tr>
                                         <td><?php echo $i;?></td>
                                         <td><?php echo $row['lang_id']?></td>
-                                        <td><?php echo $row['cat_id']?></td>
+                                        <td><?php echo $row['name']?></td>
                                         <td><?php echo $row['sub_cat_name']?></td>
                                         <td><?php echo $row['sub_cat_desc']?></td>
                                         <td><img src="<?php echo base_url(); ?><?php echo $row['sub_cat_image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="80" width="80" alt="Avatar" class="w35 h35 rounded"></td>

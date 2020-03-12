@@ -31,7 +31,7 @@ class Brands_model extends CI_Model {
 	function brand_status($id,$value)
 	{
 		
-		$this->db->where(array('id' =>$id))->set(array('status' =>(int)$value))->update('brands');
+		$this->db->where(array('id' =>$id))->set(array('brand_status' =>(int)$value))->update('brands');
 		return true;
 	}
 	public function edit_brand($id)

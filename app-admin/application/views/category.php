@@ -154,7 +154,7 @@
                                         <td><?php echo $row['cat_desc']?></td>
                                         <td><img src="<?php echo base_url(); ?><?php echo $row['image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="80" width="80" alt="Avatar" class="w35 h35 rounded"></td>
                                         <td><img src="<?php echo base_url(); ?><?php echo $row['image2']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="80" width="80" alt="Avatar" class="w35 h35 rounded"></td>
-                                        <td> <?php echo $row['brand_id']?></td>
+                                        <td> <?php echo $row['brand_name']?></td>
                                         <td> <?php echo $row['sequence']?></td>
                                         <td> <?php echo $row['seo_title']?></td>
                                         <td> <?php echo $row['seo_desc']?></td> 
