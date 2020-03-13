@@ -16,8 +16,50 @@ class Users extends CI_Controller {
 	{
 		$sess_data = $this->session->all_userdata();
 		if($sess_data['admin_id'] == '' ){redirect('login/index');}
-		$data['users'] = $this->Users_model->get_users();
 		$this->load->view('users',$data);
+	}
+
+	function fetch_data()
+	{
+		//  ini_set('display_errors', 1);
+		// ini_set('display_startup_errors', 1);
+		// error_reporting(E_ALL);
+
+		sleep(1);
+		$name = $this->input->post('name');
+		$email_id = $this->input->post('email_id');
+		$this->load->library('pagination');
+		$config = array();
+		$config['base_url'] = '#';
+		$config['total_rows'] = $this->Users_model->count_all($name,$email_id);
+		$config['per_page'] = 8;
+		$config['uri_segment'] = 3;
+		$config['use_page_numbers'] = TRUE;
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['next_link'] = '&gt;';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['prev_link'] = '&lt;';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+		$config['cur_tag_open'] = "<li class='active'><a href='#'>";
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['num_links'] = 3;
+		$this->pagination->initialize($config);
+		$page = $this->uri->segment(3);
+		$start = ($page - 1) * $config['per_page'];
+		$output = array(
+		'pagination_link'  => $this->pagination->create_links(),
+		'admissions_list'   => $this->Users_model->fetch_data($config["per_page"], $start, $name,$email_id)
+		);
+		echo json_encode($output);
 	}
 	public function add_users()
 	{
@@ -69,7 +111,14 @@ class Users extends CI_Controller {
 			}
 		 
 	 }
-	 
+
+	 public function view_details($id)
+	{
+		$sess_data = $this->session->all_userdata();
+		if($sess_data['admin_id'] == '' ){redirect('login/index');}
+		$data['view_user_details'] = $this->Users_model->view_details($id);
+		$this->load->view('view_details',$data);
+	}
 
 	 public function delete_user($id)
 		{

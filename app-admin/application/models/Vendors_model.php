@@ -60,9 +60,6 @@ class Vendors_model extends CI_Model {
 		  $result = $query->result_array();
 		  return $result;
 		
-		
-		
-		
 	}
 	public function edit_user($id)
 	{

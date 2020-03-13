@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Language" content="en">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Users View</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Add Users</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 <meta name="description" content="This is an example dashboard created using build-in elements and components."><!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no"><link href="<?php echo base_url();?>assets/css/.-main.87c0748b313a1dda75f5.css" rel="stylesheet"></head><body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
-
-
-<style>
-.pagination li a{
-    position: relative;
-    display: block;
-    padding: .5rem .75rem;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #007bff;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-}
-
-</style>
     <div class="app-header header-shadow">
         <div class="app-header__logo">
             <div class="logo-src"></div>
@@ -98,8 +83,9 @@
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
                                 <i class="lnr-user icon-gradient bg-ripe-malin"></i>
+                                    </i>
                                 </div>
-                                <div>Users
+                                <div>Add User
                                     <div class="page-title-subheading">
                                     </div>
                                 </div>
@@ -107,139 +93,153 @@
                             
                         </div>
                     </div>            
-                   <h5 ><p class="text-success col-sm-12 text-success text-center" ><?php echo $this->session->flashdata('message1'); ?></p></h5>
-                    <h5 ><p class="text-info col-sm-12 text-success text-center" ><?php echo $this->session->flashdata('message2'); ?></p></h5>
-                    <h5 ><p class="text-danger col-sm-12 text-success text-center" ><?php echo $this->session->flashdata('message3'); ?></p></h5>
+                  
                     <div class="d-flex flex-wrap justify-content-between">
                         <div class="col-12 col-md-3 p-0 mb-3">
-                            <a href="<?php echo base_url('users/add_users');?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-info">
+                            <a href="<?php echo base_url('users/users_view');?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-info">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
-                                    <i class="fa fa-plus fa-w-20"></i>
+                                    <b><i class="ion-android-arrow-back"></i></b>
                                 </span>
-                                Add Users
+                                Back
                             </button><a/>
                         </div>
                         <!-- <div class="col-12 col-md-3 p-0 mb-3">
                             <input type="text" class="form-control" placeholder="Search...">
                         </div> -->
                     </div>
-                    
-                   <div class="search-fields" >
-								<div class="row clearfix">
-								    <div class="col-lg-5 col-md-5 col-sm-12">
-									 <div class="form-group" style="margin-top:10px;">
-                                    <input type="text"   id="name" class="form-control" placeholder="Enter Name" style="background-color: #fff; border-color: #fff;" required/>
-									</div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-12">
-									 <div class="form-group" style="margin-top:10px;">
-                                    <input type="text"   id="email_id" class="form-control" placeholder="Enter Your Mail Id" style="background-color: #fff; border-color: #fff;" required/>
-									</div>
-									</div>  
-									<div class="col-lg-2 col-md-2 col-sm-12" style="margin-top:10px;">
-                                    <button id="search" class="btn btn-success">Search</button>
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <?php foreach ($view_user_details as $row) {?>
+                        <div class="row">
+                                <div class="col-md-5">
+									<div class="form-group">
+										<strong>City Name : </strong>
+										<span class="pull-right"><?php echo $row['city_name'];?>
+										</span>
 									</div>
                                 </div>
+                                <div class="col-md-5">
+									<div class="form-group">
+										<strong>User Name :</strong>
+										<span class="pull-right"><?php echo $row['name'];?>
+										</span>
+									</div>
                                 </div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<strong>Mobile :</strong>
+										<span class="pull-right">
+										<?php echo $row['mobile'];?></span>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<strong>Email :</strong>
+										<span class="pull-right">
+										<?php echo $row['email_id'];?></span>
+									</div>
+								</div>
+			
+								<div class="col-md-5">
+										<div class="form-group">
+										<strong>Categories :</strong>
+										 <span class="pull-right"><?php echo $row['categories'];?>
+									</span>
+								</div>
+								</div>
 								
-                                <div class="tabs-animation">
-                                <div class="card mb-3">
-                           
-                                  
-                                    <table class="table table-hover table-custom spacing8">
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
-                                                <th>City Name</th>
-                                                <th>User Name</th>
-                                                <th>User Email</th>
-                                                <th>User Mobile</th>
-                                                <th>User Address</th>
-                                                <th>Admin Type</th>
-                                                <th>User_image</th>
-                                                <th>Status</th>
-                                                 <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                        
-                                        </div>
-                                <div id="pagination_link" class="pull-right">
-                                </div>                
+								<div class="col-md-5">
+									<div class="form-group">
+										<strong>Address :</strong>
+										<span class="pull-right">
+										<?php echo $row['address'];?>
+										</span>
+									</div>
+								</div>
+								
+								<div class="col-md-5">
+									<div class="form-group">
+										<strong>Admin Type :</strong>
+										<span class="pull-right">
+										<?php echo $row['admin_type'];?></span>
+									</div>
+								</div>
+								
+								
+                                <div class="col-md-5">
+									<div class="form-group">
+										<strong>location :</strong>
+										<span class="pull-right"><?php echo $row['location'];?>
+										</span>
+									</div>
                                 </div>
-                            
+                                <div class="col-md-5">
+									<div class="form-group">
+										<strong>latitude :</strong>
+										<span class="pull-right">
+										<?php echo $row['latitude'];?></span>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+									<strong>Longitude :</strong>
+										<span class="pull-right">
+								       <?php echo $row['longitude'];?></span>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+										<strong>About vendor :</strong>
+										<span class="pull-right">
+										<?php echo $row['about_vendor'];?>
+										</span>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="form-group">
+									<strong>photos :</strong>
+									<span class="pull-right">
+									<?php echo $row['city_id'];?>
+									</span>
+								</div>
+                            </div>
+                            <?php }?>
+						    </div>
+                          </div>
+                    </div>
                 </div>
                
                 <?php $this->load->view('footer');?>
             </div>
     </div>
 </div>
+<?php $this->load->view('right_top');?>
+
+<div class="app-drawer-overlay d-none animated fadeIn"></div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/scripts-main.87c0748b313a1dda75f5.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script>
- 
-    $(document).ready(function(){
-        
-        ///filter and pagenation//
-        filter_data(1);
-        $("#search").on("click", function(){
-            filter_data(1);
-        });
-        function filter_data(page)
-        {
-            $('#loading').show();
-            var action = 'fetch_data';
-            var email_id = $('#email_id').val();
-            var name = $('#name').val();
-            $.ajax({
-                url:"<?php echo base_url(); ?>users/fetch_data/"+page,
-                method:"POST",
-                dataType:"JSON",
-                data:{action:action, name:name, email_id:email_id},
-                success:function(data)
-                {
-                    $('tbody').html(data.admissions_list);
-                    $('#pagination_link').html(data.pagination_link);
-                    $('#loading').hide();
-                }
-            })
-        }
-        $(document).on('click', '.pagination li a', function(event){
-            event.preventDefault();
-            var page = $(this).data('ci-pagination-page');
-            filter_data(page);
-        });
-    });
-function ConfirmDelete()
-    {
-      var x = confirm("Are you sure you want to delete?");
-      if (x)
-          return true;
-      else
-        return false;
-    }
-	function Inactive()
-    {
-      var x = confirm("Are you sure you want to Inactive?");
-      if (x)
-          return true;
-      else
-        return false;
-    }
-	function Active()
-    {
-      var x = confirm("Are you sure you want to Active?");
-      if (x)
-          return true;
-      else
-        return false;
-    }
-</script>
+  $('.jobdeatils').hide();
+  $('#admin_type').on('change', function(){
+    if($("#admin_type option:selected").val()=='Vender'){
+      $('.jobdeatils').show();
+      $("#location").attr("required", "true");
+      $("#latitude").attr("required", "true");
+      $("#longitude").attr("required", "true");
+      $("#about_vendor").attr("required", "true");
+     
 
-<?php $this->load->view('right_top');?>
-<div class="app-drawer-overlay d-none animated fadeIn"></div>
-<script type="text/javascript" src="<?php echo base_url();?>assets/js/scripts-main.87c0748b313a1dda75f5.js"></script>
+    }else{
+      $('.jobdeatils').hide();
+	   $("#country").removeAttr('required');
+      $("#salary").removeAttr('required');
+      $("#city").removeAttr('required');
+      $("#org").removeAttr('required');
+      $("#designation").removeAttr('required');
+    }
+
+});
+</script>
 </body>
 </html>
