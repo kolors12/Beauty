@@ -152,15 +152,12 @@
                                         <tr>
                                         <td><?php echo $i;?></td>
                                         <td><?php echo $row['pro_name']?></td>
-                                        <td><?php echo $row['cat_id']?></td>
-                                        <td><?php echo $row['sub_cat_id']?></td>
-										
-                                        <td><?php echo $row['pro_type']?></td>
+                                        <td><?php echo $row['name']?></td>
+                                        <td><?php echo $row['sub_cat_name']?></td>
+										<td><?php echo $row['pro_type']?></td>
 										<td><?php echo $row['hsn_code']?></td>
 										<td><a href="<?php echo base_url('products/view_product_details');?>/<?php echo $row['prod_id']?>"><button type="button" class="btn-shadow dropdown-toggle btn btn-primary">Product Details</button><a></td>
-                                        <!--td><button class="mb-2 mr-2 btn-pill btn btn-gradient-primary btn-sm"><?php // //$row['admin_type']?></button></td>
-                                        <td><img src="<?php// echo base_url(); ?><?php //echo $row['user_image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="50" width="50" alt="Avatar" class="w35 h35 rounded"></td-->
-                                        <td scope="row">
+										<td scope="row">
                                         <?php if($row['status'] == "1")
                                         { ?>
                                         <a  Onclick="return Inactive();" href="<?php echo base_url(); ?>products/product_status/<?php echo $row['prod_id'].'/0'?>" data-toggle="tooltip" title="Inactive" class="btn btn-sm btn-danger changestatus">
@@ -185,7 +182,7 @@
                                         <td colspan="5" style="text-align:center;color:red;">No Products Found</td>
                                         </tr>
                                         <?php } ?>
-                                    </tr>
+                                        </tr>
                                    
                                    
                                 </tbody>
@@ -213,7 +210,7 @@
 								<div class="col-md-6">
 									<div class="position-relative form-group">
 										<label for="exampleSelect" class="">Category</label>
-										<select name="cat_id" id="exampleSelect" class="form-control">
+										<select name="cat_id" id="id" class="form-control">
 										<option value="">Please Category</option>
 										<?php  foreach ($category as $row) {?>
 										<option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
@@ -225,14 +222,9 @@
 								<div class="col-md-6">
 									<div class="position-relative form-group">
 										<label for="exampleSelect" class="">Sub Category</label>
-										<select name="sub_cat_id" id="exampleSelect" class="form-control">
+										<select name="sub_cat_id" id="sub_category"  class="form-control">
 										<option value="">Please Sub Category</option>
-									
-										<option value="1">fdgdf</option>
-										<option value="2">fdgdf</option>
-										<option value="3">fdgdf</option>
-										
-										</select>
+									</select>
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -487,8 +479,35 @@
             </div>
     </div>
 </div>
-<script>
-    
+
+<script type="text/javascript">
+    $(document).ready(function(){
+ 
+            $('#id').change(function(){ 
+                var id=$(this).val();
+                $.ajax({
+                    url : "<?php echo site_url('products/get_sub_category');?>",
+                    method : "POST",
+                    data : {id: id},
+                    async : true,
+                    dataType : 'json',
+                    success: function(data){
+                         
+                        var html = '';
+                        var i;
+                        for(i=0; i<data.length; i++){
+                            html += '<option value='+data[i].sub_cat_id+'>'+data[i].sub_cat_name+'</option>';
+                        }
+                        $('#sub_category').html(html);
+ 
+                    }
+                });
+                return false;
+            }); 
+             
+        });
+		
+		
 function ConfirmDelete()
     {
       var x = confirm("Are you sure you want to delete?");
@@ -514,6 +533,8 @@ function ConfirmDelete()
         return false;
     }
 </script>
-</script>
 <?php $this->load->view('right_top');?>
-<div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="<?php echo base_url();?>assets/js/scripts-main.87c0748b313a1dda75f5.js"></script></body></html>
+<div class="app-drawer-overlay d-none animated fadeIn"></div>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/scripts-main.87c0748b313a1dda75f5.js"></script>
+</body>
+</html>

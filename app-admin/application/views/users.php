@@ -154,7 +154,6 @@
                                                 <th>User Name</th>
                                                 <th>User Email</th>
                                                 <th>User Mobile</th>
-                                                <th>User Address</th>
                                                 <th>Admin Type</th>
                                                 <th>User_image</th>
                                                 <th>Status</th>

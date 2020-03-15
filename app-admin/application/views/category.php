@@ -126,16 +126,14 @@
                                         <thead>
                                         <tr>
                                         <th>S.No</th>
-                                        <th>category Name</th>
-                                        <th>Slug</th>
-                                        <th>Category Description</th>
+                                        <th>Category Name</th>
+										<th>Category Description</th>
                                         <th>Category Image</th>
-                                        <th>Category Image2</th>
                                         <th>Brand Type</th>
                                         <th>Sequence</th>
-                                        <th>Seo Title</th>
+                                        <!--th>Seo Title</th>
                                         <th>Seo Description</th>
-                                        <th>Seo Keywords</th>
+                                        <th>Seo Keywords</th-->
                                         <th>Status</th>
                                         <th>Actions</th> 
                                         </tr>
@@ -150,15 +148,13 @@
                                         <tr>
                                         <td><?php echo $i;?></td>
                                         <td><?php echo $row['name']?></td>
-                                        <td><?php echo $row['slug']?></td>
                                         <td><?php echo $row['cat_desc']?></td>
                                         <td><img src="<?php echo base_url(); ?><?php echo $row['image']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="80" width="80" alt="Avatar" class="w35 h35 rounded"></td>
-                                        <td><img src="<?php echo base_url(); ?><?php echo $row['image2']?>" data-toggle="tooltip" data-placement="top" title="Avatar Name" height="80" width="80" alt="Avatar" class="w35 h35 rounded"></td>
                                         <td> <?php echo $row['brand_name']?></td>
                                         <td> <?php echo $row['sequence']?></td>
-                                        <td> <?php echo $row['seo_title']?></td>
-                                        <td> <?php echo $row['seo_desc']?></td> 
-                                        <td> <?php echo $row['seo_keywords']?></td>
+                                        <!--td> <?php //echo $row['seo_title']?></td>
+                                        <td> <?php //echo $row['seo_desc']?></td> 
+                                        <td> <?php //echo $row['seo_keywords']?></td-->
                                         
                                         <td scope="row">
                                         <?php if($row['status'] == "0")

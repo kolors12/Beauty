@@ -132,7 +132,6 @@ class Users_model extends CI_Model {
 						<td><a title="View User Details" href="'.base_url().'users/view_details/'.$row['admin_id'].'">'. $row['name'].' </a></td>
 						<td>'. $row['email_id'].'</td>
 						<td>'. $row['mobile'].'</td>
-						<td>'. $row['address'].'</td>
 						<td scope="row">';
 						if($row['admin_type'] == "Admin")
 						{ 

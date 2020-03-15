@@ -126,7 +126,7 @@
                                         <thead>
                                         <tr>
                                         <th>S.No</th>
-                                        <th>Lang Id</th>
+                                        <!--th>Lang Id</th-->
                                         <th>Category Name</th>
                                         <th>Sub Category Name</th>
                                         <th>Sub Category Description</th>
@@ -146,7 +146,7 @@
 										?>	
                                         <tr>
                                         <td><?php echo $i;?></td>
-                                        <td><?php echo $row['lang_id']?></td>
+                                        <!--td><?php //echo $row['lang_id']?></td-->
                                         <td><?php echo $row['name']?></td>
                                         <td><?php echo $row['sub_cat_name']?></td>
                                         <td><?php echo $row['sub_cat_desc']?></td>
@@ -183,7 +183,7 @@
                                         </td>
                                         <?php  $i++; } }else{?>
                                         <tr>
-                                        <td colspan="13" style="text-align:center;color:red;">No Category Found</td>
+                                        <td colspan="13" style="text-align:center;color:red;">No Sub Category Found</td>
                                         </tr>
                                         <?php } ?>
                                     </tr>

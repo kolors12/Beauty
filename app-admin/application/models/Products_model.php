@@ -19,12 +19,24 @@ class Products_model extends CI_Model {
 	} */
 	public function get_products()
 	{
+		$this->db->select('products.pro_name,products.cat_id,products.sub_cat_id,products.pro_type,products.hsn_code,products.status,products.prod_id,category.name,sub_categories.sub_cat_name');
+		$this->db->from('products');
+		$this->db->join('category','category.id = products.cat_id');
+		$this->db->join('sub_categories','sub_categories.sub_cat_id = products.sub_cat_id');
+		$query=$this->db->get();
+		$result=$query->result_array();
+		return $result;
 		
 		$this->db->from('products');
 		$query=$this->db->get();
 		$result=$query->result_array();
 		return $result;
 	}
+	function get_sub_category($category_id)
+	{
+		$query = $this->db->get_where('sub_categories', array('cat_id' => $category_id));
+        return $query;
+    }
 	public function get_city()
 	{
 		$this->db->from('cities');
@@ -61,16 +73,13 @@ class Products_model extends CI_Model {
 	public function view_product_details($id)
 	{
 		  $this->db->select('*');
-		  $this->db->from('products v');
-		  /* $this->db->join('cities c', 'c.city_id = v.city_id'); */
+		  $this->db->from('products');
+		  $this->db->join('category','category.id = products.cat_id');
+		  $this->db->join('sub_categories','sub_categories.sub_cat_id = products.sub_cat_id');
 		  $this->db->where(array('prod_id' => $id));
 		  $query = $this->db->get();
 		  $result = $query->result_array();
 		  return $result;
-		
-		
-		
-		
 	}
 	public function edit_user($id)
 	{

@@ -131,7 +131,7 @@
 							   <table  class="table table-bordered"  >
 								<tr>
 									 <th>Category Name </th>
-									 <td><?php echo $row['cat_id']?></td>
+									 <td><?php echo $row['name']?></td>
 								  </tr>
 									<tr>
 									 <th>Product Type</th>
@@ -188,7 +188,7 @@
 							   <table  class="table table-bordered">
 								<tr>
 									 <th>Sub Category Name </th>
-									 <td><?php echo $row['sub_cat_id']?></td>
+									 <td><?php echo $row['sub_cat_name']?></td>
 								  </tr>
 								 
 									<tr>

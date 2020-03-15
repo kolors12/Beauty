@@ -153,7 +153,7 @@
                                     <select name="brand_id" id="brand_id" class="form-control">
                                         <option value="">Please Select Brand</option>
                                         <?php  foreach ($brands_drop as $row) {?>
-                                        <option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
+                                        <option value="<?php echo $row['id']?>"><?php echo $row['brand_name']?></option>
                                         <?php }?>
                                     </select>
                                 </div>

@@ -21,7 +21,12 @@ class Products extends CI_Controller {
 		$data['category'] = $this->Products_model->get_category(); 
 		$this->load->view('products',$data);
 	}
-	
+	public function get_sub_category()
+	{
+        $category_id = $this->input->post('id',TRUE);
+		$data = $this->Products_model->get_sub_category($category_id)->result();
+        echo json_encode($data);
+    }
 	public function view_product_details($id)
 	{
 		$sess_data = $this->session->all_userdata();
