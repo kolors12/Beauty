@@ -15,7 +15,7 @@
 				<div class="breadcrumb-wrap">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item">
-							<a href="index.html">Home</a>
+							<a href="<?php echo base_url('home/index')?>">Home</a>
 						</li>
 						<!-- <li class="breadcrumb-item"> -->
 							<!-- <a href="#">Pages</a> -->
@@ -93,24 +93,30 @@
 					<div class="img__btn"> <span class="m--up">Sign Up</span> <span class="m--in">Sign In</span> </div>
 					</div>
 					<div id="regSec">
+						
 					<div class="form sign-up text-center">
+					<form action="javascript:void(0)" id="form" method="post">
 						<h2>Register</h2>
+						<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
+						<a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">×</a>
+						</div>
 						<div class="u-form-group">
-							<input type="text" placeholder="Full Name" id="reg-names" required=""> </div>
+							<input type="text"  class="form-control" placeholder="Full Name" id="name" required=""> 
+						</div>
 						<div class="u-form-group">
-							<input type="text" placeholder="Mobile" id="reg-mobiles" pattern="^\d{10}$" required=""> </div>
+							<input type="text"  class="form-control numbre"  placeholder="Mobile" id="phone" required=""> 
+						</div>
 						<div class="u-form-group">
-							<input type="email" placeholder="Email" id="reg-emails" required=""> </div>
+							<input type="email"  class="form-control" placeholder="Email" id="email" required=""> 
+						</div>
 						<div class="u-form-group">
-							<input type="password" id="reg-passr" placeholder="Password" required=""> </div>
-						<div class="u-form-group">
-							<input type="password" id="reg-con-passr" placeholder="Confirm Password" required=""> </div>
-						<!-- <button type="button" class="submits-btn e-mtn-longinbtn" id="registers">SIGN UP</button> -->
-						<button type="submit" class="default-btn mt20">
-						<a href="javascript:void(0)">
-						SIGN UP</a>
-					</button>
+							<input type="password"  class="form-control"  placeholder="Password" id="pass" required=""> 
+						</div>
+						<button type="submit" class="default-btn mt20" id="butsave">SIGN UP</button>
+					
+						</form>
 					</div>
+				
 					 <div class="lg-hidden">
 					<h2>One of us?</h2>
 					 <p>If you already has an account, just <a id="signInId" href="javascript:void(0)">sign in.</a> We've missed you!</p>
@@ -123,14 +129,18 @@
 	</div>
 </section>
 
-	
-
-
-
-
-    <?php $this->load->view('footer');?>
-	
+	<?php $this->load->view('footer');?>
+	<style>
+	.error{
+	color: red;
+	}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery.validate.js"></script>
 	<script>
+ 	$("#form").validate({
+    });
+
 	$(document).ready(function(){ 
 	$('#signUpId').click(function(e){  
 	 e.preventDefault();  
@@ -165,6 +175,49 @@
 		});
 		});
 	</script>
-	
+	<script>
+$(document).ready(function() {
+	$('#butsave').on('click', function() {
+
+		var name = $('#name').val();
+		var email = $('#email').val();
+		var phone = $('#phone').val();
+		var password = $('#pass').val();
+		if(name!="" && email!="" && phone!="" && password!=""){
+			$("#butsave").attr("disabled", "disabled");
+			$.ajax({
+				url: "<?php echo base_url("login/insert_user");?>",
+				type: "POST",
+				data: {
+					type: 1,
+					name: name,
+					email: email,
+					password : password,
+					phone: phone
+					
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+						$("#butsave").removeAttr("disabled");
+						$('#fupForm').find('input:text').val('');
+						$("#success").show();
+						$('#success').html('User Data successfully Register !'); 
+						setTimeout(function(){// wait for 5 secs(2)
+          				 location.reload(); // then reload the page.(3)
+      					}, 5000); 
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+					
+				}
+			});
+		}
+		
+	});
+});
+</script>
 </body>
 </html>

@@ -15,8 +15,13 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['category'] = $this->Home_model->get_category();
-		//print_r($data['category']);exit;
 		$this->load->view('home',$data);
+	}
+
+	public function products_view()
+	{
+	$data['category'] = $this->Home_model->get_category();
+	$this->load->view('products',$data);
 	}
 	
 	

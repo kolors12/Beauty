@@ -26,7 +26,7 @@
 			<?php if(!empty($category->subs)) {  ?>
 			<ul class="dropdown-menu">
 				<?php  foreach ($category->subs as $sub)  {?>
-			   <li><a href="fullbody_massage.html"><?php echo $sub->sub_cat_name;?></a></li>
+			   <li><a href="<?php echo base_url('home/products_view');?>/<?php echo $category->id;?>/<?php echo $sub->sub_cat_id;?>"><?php echo $sub->sub_cat_name;?></a></li>
 				<?php }?>
 			  
 			</ul>

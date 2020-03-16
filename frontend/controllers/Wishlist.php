@@ -7,14 +7,15 @@ class Wishlist extends CI_Controller {
 		error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 		  $this->load->library('session');
 		  $this->load->helper('url');
-		  /* $this->load->model('Banner_model'); */
+		  $this->load->model('Home_model');
 		  $this->load->library("form_validation");
 		 
 	}
 	
 	public function wishlist_view()
 	{
-		$this->load->view('wishlist');
+		$data['category'] = $this->Home_model->get_category();
+		$this->load->view('wishlist',$data);
 	}
 	
 	
