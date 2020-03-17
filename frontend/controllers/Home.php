@@ -14,17 +14,22 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
+		
 		$data['category'] = $this->Home_model->get_category();
 		$this->load->view('home',$data);
 	}
 
-	public function products_view()
+	public function products()
 	{
-	$data['category'] = $this->Home_model->get_category();
-	$this->load->view('products',$data);
+		$data['category'] = $this->Home_model->get_category();
+		$this->load->view('products',$data);
 	}
 	
-	
+	public function product_details()
+	{
+		$data['category'] = $this->Home_model->get_category();
+		$this->load->view('product_details',$data);
+	}
 	
 	
 }

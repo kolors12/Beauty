@@ -4215,6 +4215,7 @@ margin-top: 10px;
   -webkit-transition:all 0.1s linear;
   -moz-transition:all 0.1s linear;
   transition:all 0.1s linear;
+  display: inline-block;
 }
 input.error,
 textarea.error{

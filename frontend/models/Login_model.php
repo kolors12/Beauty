@@ -8,6 +8,47 @@ class Login_model extends CI_Model {
 		$this->db->insert('users', $data);
 		return true;
 	}
+
+
+
+	function user_login($email_id,$password)
+	{
+	  $query=$this->db->where(array('email_id'=>$email_id,'password'=>$password))->get('users');
+	  $result = $query->result_array();
+  
+	  if(sizeof($result) == 1)
+	  
+	  {
+		  $row = $query->row();
+		  $user_data = array(
+		  'user_id' => $row->user_id,
+		  'first_name' => $row->first_name,
+		  'middle_name' => $row->middle_name,
+		  'last_name' => $row->last_name,
+		  'mobile' => $row->mobile,
+		  'email_id' => $row->email_id,
+		  'city' => $row->city,
+		  'user_status' => $row->user_status,
+		  'password' => $row->password,
+		  'user_status' => $row->user_status,
+		  'address1' => $row->address1,
+		  'validated' => true
+		  );
+		  $this->session->set_userdata($user_data);
+		  return true;
+
+		  
+	  } 
+  }
+
+
+
+
+
+
+
+
+
 	/* public function get_category()
 	{
 		

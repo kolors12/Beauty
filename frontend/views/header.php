@@ -10,7 +10,7 @@
 				<div class="col-md-10 col-xs-8  col-sm-10 pull-right">
 					<div class="BBP_headerright">
 						
-						<ul class="BBP_head_address wrp">
+						<ul class="BBP_head_address wrp userdetails">
 							<li class="hidden-xs">
 								<span class="BBP_head_addressicon"><i class="fa fa-phone" aria-hidden="true"></i></span>
 								<div class="BBP_head_addresscontent">
@@ -27,10 +27,14 @@
 									<span>contact@bigbeautypack.com</span>
 								</div>
 							</li>
-							
+							<?php 	
+							$user_data = $this->session->all_userdata();
+							if($user_data['user_id'] == '' ){
+							?>
 							<li>
 								<a class="bbp_btn_header" href="<?php echo base_url('login/login_register')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Login / Register</a>
 							</li>
+							<?php }else {?>
 							<div class="serar-cart-icon">
 								<ul>
 									<li><a href="<?php echo base_url('wishlist/wishlist_view')?>" class="search-opt"><i class="fa fa-heart-o"></i></a></li>
@@ -76,18 +80,42 @@
 												<i class="fa fa-close"></i>
 											</span>
 											</div>
+											
 										</li>
+										
 									</ul>
+									
 									<div class="cart-footer">
-										<div class="Cfooter-top"> <span>total</span> <span><i class="fa fa-inr"></i>160</span></div>
-										<div class="Cfooter-bottom"> <a href="cart.html" class="btn-mr xsl pill th-secondary">VIEW CART</a> <a href="<?php echo base_url('checkout/checkout_view')?>" class="btn-mr xsl pill th-primary ">CHECKOUT</a></div>
+										<div class="Cfooter-top"> 
+										<span>total</span> 
+										<span><i class="fa fa-inr"></i>160</span></div>
+										<div class="Cfooter-bottom"> 
+										<a href="cart.html" class="btn-mr xsl pill th-secondary">VIEW CART</a> 
+										<a href="<?php echo base_url('checkout/checkout_view')?>" class="btn-mr xsl pill th-primary">CHECKOUT</a>
+									</div>
 									</div>
 								</div>
-							</div>
 							
+							</div>
+						
+							<div class="btn-group">
+							  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+							  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+								<span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+								<li><a href="<?php echo base_url('login/user_account');?>"><i class="fa fa-pencil"></i> My Account</a></li>
+								<li><a href="<?php echo base_url('wishlist/wishlist_view');?>"><i class="fa fa-heart-o"></i> Wishlist</a></li>
+								<li><a href="<?php echo base_url('login/logout');?>"><i class="fa fa-unlock"></i> Logout</a></li>
+							  </ul>
+							</div>
+							<?php }?>
 						</ul>
+						
 					</div>
+					
 				</div>
+				
 			</div>
 		</div>
 	</div>

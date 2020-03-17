@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html"><img src="" alt=""/></a>
+      <a class="navbar-brand" href="<?php echo base_url('home/index');?>"><img src="" alt=""/></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -26,7 +26,7 @@
 			<?php if(!empty($category->subs)) {  ?>
 			<ul class="dropdown-menu">
 				<?php  foreach ($category->subs as $sub)  {?>
-			   <li><a href="<?php echo base_url('home/products_view');?>/<?php echo $category->id;?>/<?php echo $sub->sub_cat_id;?>"><?php echo $sub->sub_cat_name;?></a></li>
+			   <li><a href="<?php echo base_url('home/products');?>/<?php echo $category->id;?>/<?php echo $sub->sub_cat_id;?>"><?php echo $sub->sub_cat_name;?></a></li>
 				<?php }?>
 			  
 			</ul>

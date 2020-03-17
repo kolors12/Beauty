@@ -155,7 +155,7 @@
 						<div class="priceoff">30% Off</div>
 					</div>
 					
-					<h6 class="title"><a href="saloon_details.html">Reliance Beauty Salon</a></h6>
+					<h6 class="title"><a href="<?php echo base_url('home/product_details')?>">Reliance Beauty Salon</a></h6>
 					<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Ameerpet</p>
 					<h6 class="price"><i class="fa fa-inr"></i>350</h6><del><i class="fa fa-inr"></i>880</del>
 					<ul class="saloon_services">
@@ -169,7 +169,7 @@
 						</div>
 					</ul>
 					<ul class="Saloons_details">
-						<li><a class="saloon_btn sbtn" href="saloon_details.html">View Details</a></li>
+						<li><a class="saloon_btn sbtn" href="<?php echo base_url('home/product_details')?>">View Details</a></li>
 					</ul>
 				</div>
 			</div>
@@ -185,7 +185,7 @@
 						<div class="priceoff">30% Off</div>
 					</div>
 					
-					<h6 class="title"><a href="saloon_details.html">Serena Spa - Radisson Blu Plaza Hotel</a></h6>
+					<h6 class="title"><a href="<?php echo base_url('home/product_details')?>">Serena Spa - Radisson Blu Plaza Hotel</a></h6>
 					<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Banjara Hills</p>
 					<h6 class="price"><i class="fa fa-inr"></i>350</h6><del><i class="fa fa-inr"></i>990</del>
 					<ul class="saloon_services">
@@ -199,7 +199,7 @@
 						</div>
 					</ul>
 					<ul class="Saloons_details">
-						<li><a class="saloon_btn sbtn" href="saloon_details.html">View Details</a></li>
+						<li><a class="saloon_btn sbtn" href="<?php echo base_url('home/product_details')?>">View Details</a></li>
 					</ul>
 				</div>
 			</div>
@@ -215,7 +215,7 @@
 						<div class="priceoff">30% Off</div>
 					</div>
 					
-					<h6 class="title"><a href="saloon_details.html">Goje Premium Spa and Salon</a></h6>
+					<h6 class="title"><a href="<?php echo base_url('home/product_details')?>">Goje Premium Spa and Salon</a></h6>
 					<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Madhapur</p>
 					<h6 class="price"><i class="fa fa-inr"></i>350</h6><del><i class="fa fa-inr"></i>790</del>
 					<ul class="saloon_services">
@@ -229,7 +229,7 @@
 						</div>
 					</ul>
 					<ul class="Saloons_details">
-						<li><a class="saloon_btn sbtn" href="saloon_details.html">View Details</a></li>
+						<li><a class="saloon_btn sbtn" href="<?php echo base_url('home/product_details')?>">View Details</a></li>
 					</ul>
 				</div>
 			</div>
@@ -245,7 +245,7 @@
 						<div class="priceoff">30% Off</div>
 					</div>
 					
-					<h6 class="title"><a href="saloon_details.html">Green trends</a></h6>
+					<h6 class="title"><a href="<?php echo base_url('home/product_details')?>">Green trends</a></h6>
 					<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Hi-tech city</p>
 					<h6 class="price"><i class="fa fa-inr"></i>350</h6><del><i class="fa fa-inr"></i>690</del>
 					<ul class="saloon_services">
@@ -259,7 +259,7 @@
 						</div>
 					</ul>
 					<ul class="Saloons_details">
-						<li><a class="saloon_btn sbtn" href="saloon_details.html">View Details</a></li>
+						<li><a class="saloon_btn sbtn" href="<?php echo base_url('home/product_details')?>">View Details</a></li>
 					</ul>
 				</div>
 			</div>
@@ -275,7 +275,7 @@
 						<div class="priceoff">30% Off</div>
 					</div>
 					
-					<h6 class="title"><a href="saloon_details.html">Serena Spa - Radisson Blu Plaza Hotel</a></h6>
+					<h6 class="title"><a href="<?php echo base_url('home/product_details')?>">Serena Spa - Radisson Blu Plaza Hotel</a></h6>
 					<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Banjara Hills</p>
 					<h6 class="price"><i class="fa fa-inr"></i>350</h6><del><i class="fa fa-inr"></i>990</del>
 					<ul class="saloon_services">
@@ -289,7 +289,7 @@
 						</div>
 					</ul>
 					<ul class="Saloons_details">
-						<li><a class="saloon_btn sbtn" href="saloon_details.html">View Details</a></li>
+						<li><a class="saloon_btn sbtn" href="<?php echo base_url('home/product_details')?>">View Details</a></li>
 					</ul>
 				</div>
 			</div>
