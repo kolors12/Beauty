@@ -40,6 +40,13 @@
 			<div class="cont wow col-xs-12 slideInLeft s--signup" style="visibility: visible; animation-name: slideInLeft;">
 				<div class="form  sign-in text-center">
 					<h2 class="text-center">Sign In</h2>
+					<div id="status"></div>
+
+					<!-- Facebook login or logout button 
+					<a href="javascript:void(0);" onclick="fbLogin();" id="fbLink"><button type="button" class="fb-btn">Connect with <span>facebook</span></button></a>
+
+					< Display user profile data -->
+					<div id="userData"></div>
 					<button type="button" class="fb-btn">Connect with <span>facebook</span></button>
 					<button type="button" class="google-btn">Connect with <span>Google</span></button>
 					<div class="or-seperator"><i>or</i></div>
@@ -91,10 +98,9 @@
 						
 					<div class="form sign-up text-center">
 					<form action="javascript:void(0)" id="form" method="post">
+						
 						<h2>Register</h2>
-						<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
-						<a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close">×</a>
-						</div>
+						<div style="color:green" id="login-success"></div>
 						<div class="u-form-group">
 							<input type="text"  class="form-control" placeholder="Full Name" id="reg-names" required> 
 						</div>
@@ -233,23 +239,25 @@ $(document).ready(function() {
 					
 				},
 				cache: false,
-				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
-					if(dataResult.statusCode==200){
-						$("#butsave").removeAttr("disabled");
-						$('#fupForm').find('input:text').val('');
-						$("#success").show();
-						$('#success').html('User Data successfully Register !'); 
-						setTimeout(function(){// wait for 5 secs(2)
-						   location.reload(); // then reload the page.(3)
-						 }, 5000); 
-					}
-					else if(dataResult.statusCode==201){
-						$('#success').html('Error occured !'); 
-					   
+				success: function(res) {
+					setTimeout(function(){
+						   location.reload(); 
+				    }, 5000);
+					if(res == 1){
+					$('#login-success').html('<div style="color:green"><h6>User Data successfully Register !</h6>');
+					}else if(res == 2){
+					$('#login-success').html('<div style="color:Red"><h6>Email Id Already Exits</div></h6>');
+					}else{
+					$('#login-success').html('<div style="color:Red"><h6>Login Failed Please Try Again..!</h6></div>');
 					}
 					
+
 				}
+
+
+
+
+
 			});
 		
 		
@@ -262,11 +270,11 @@ $("#logins").click(function() {
 	var password = $("#loginpasswords").val();
 
 		if(email_id == ''){
-			$( "#loginemails" ).addClass( "error" );
+			$("#loginemails").addClass("error");
 			return false;
 		}
 		if(password == ''){
-			$( "#loginpasswords" ).addClass( "error" );
+			$("#loginpasswords").addClass("error");
 			return false;
 
 		}
@@ -279,10 +287,8 @@ $("#logins").click(function() {
 			success: function(res) {
 				if(res == "1"){
 					 window.location="<?php echo base_url("login/user_account");?>";
-				} else if (res == "2") {
-					$('#login-responces').html('Worng Password..!!!');
-				}else{
-					$('#login-responces').html('Login Failed Please Try Again..!!!');
+				} else {
+					$('#login-responces').html('<div style="color:Red"><h6>Please Check Your Login Details..!!!</div></h6>');
 				}
 			}
 
@@ -296,7 +302,7 @@ $(document).ready(function() {
       e.preventDefault();            
       var email = $("#forgot-emails").val();
         if(email == ''){                
-        $( "#forgot-emails" ).addClass( "error" );                
+        $( "#forgot-emails" ).addClass("error");                
         return false;            
         }           
         jQuery.ajax({                
@@ -371,8 +377,12 @@ function getFbUserData(){
 
 // Save user data to the database
 function saveUserData(userData){
-    $.post("<?php echo base_url('index.php/facebook_login/saveUserData'); ?>", {oauth_provider:'facebook', userData: JSON.stringify(userData)}, function(data){ return true; });
-}
+	$.post("<?php echo base_url("login/facebook_insert");?>",
+	 {
+		 oauth_provider:'facebook', 
+		 userData: JSON.stringify(userData)}, 
+		 function(data){ return true; });
+    }
 
 // Logout from facebook
 function fbLogout() {
